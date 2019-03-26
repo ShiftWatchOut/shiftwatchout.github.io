@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>FCC Program | Watchout的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="FCC 项目实战 “随机引语生成器” 做后感###起源项目来源是 FCC 上的“随机引语生成器”，花了两天时间从 0 到接近完成，完成的项目放在 CodePen ###意料之外的地方其实应该是我目前才疏学浅，只用到 React 的冰山一角吧，有一些地方让我花了较长时间。  state 在改变之后，不能在同一个 function 里立马就可以调用到。 123456789101112131415161">
+<meta name="keywords" content="React">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FCC Program">
+<meta property="og:url" content="https://shiftwatchout.github.io/2019/03/03/FCC-Program/index.html">
+<meta property="og:site_name" content="Watchout的博客">
+<meta property="og:description" content="FCC 项目实战 “随机引语生成器” 做后感###起源项目来源是 FCC 上的“随机引语生成器”，花了两天时间从 0 到接近完成，完成的项目放在 CodePen ###意料之外的地方其实应该是我目前才疏学浅，只用到 React 的冰山一角吧，有一些地方让我花了较长时间。  state 在改变之后，不能在同一个 function 里立马就可以调用到。 123456789101112131415161">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-03-03T01:17:39.737Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="FCC Program">
+<meta name="twitter:description" content="FCC 项目实战 “随机引语生成器” 做后感###起源项目来源是 FCC 上的“随机引语生成器”，花了两天时间从 0 到接近完成，完成的项目放在 CodePen ###意料之外的地方其实应该是我目前才疏学浅，只用到 React 的冰山一角吧，有一些地方让我花了较长时间。  state 在改变之后，不能在同一个 function 里立马就可以调用到。 123456789101112131415161">
+  
+    <link rel="alternate" href="/atom.xml" title="Watchout的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Watchout的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://shiftwatchout.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-FCC-Program" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/03/FCC-Program/" class="article-date">
+  <time datetime="2019-03-03T01:11:45.000Z" itemprop="datePublished">2019-03-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      FCC Program
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="FCC-项目实战-“随机引语生成器”-做后感"><a href="#FCC-项目实战-“随机引语生成器”-做后感" class="headerlink" title="FCC 项目实战 “随机引语生成器” 做后感"></a>FCC 项目实战 “随机引语生成器” 做后感</h2><p>###起源<br>项目来源是 FCC 上的<a href="https://learn.freecodecamp.one/front-end-libraries/front-end-libraries-projects/build-a-random-quote-machine" title="FreeCodeCamp" target="_blank" rel="noopener">“随机引语生成器”</a>，花了两天时间从 0 到接近完成，完成的项目放在 <a href="https://codepen.io/freecodework/pen/moPPmW?editors=0010" title="Random Quote Machine" target="_blank" rel="noopener">CodePen</a></p>
+<p>###意料之外的地方<br>其实应该是我目前才疏学浅，只用到 React 的冰山一角吧，有一些地方让我花了较长时间。</p>
+<ol>
+<li><p><code>state</code> 在改变之后，不能在同一个 <code>function</code> 里立马就可以调用到。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class MyComponent extends React.Component &#123;</span><br><span class="line">    constructor(props)&#123;</span><br><span class="line">        super(props)</span><br><span class="line">        this.state = &#123;</span><br><span class="line">            myData: &apos;&apos;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">    doSomething()&#123;</span><br><span class="line">        this.setState(&#123;</span><br><span class="line">            myData: &apos;Strings&apos;</span><br><span class="line">        &#125;)</span><br><span class="line">        //此处myData依然是 &apos;&apos;</span><br><span class="line">        console.log(this.state.myData); </span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>发生上面情况的原因是：想在组件渲染前，<code>fetch</code> 函数获取的数据传给 <code>state</code> ，并且开始渲染第一次加载的引语。把 <code>fetch</code> 函数放在 <code>componentWillMount()</code> 里，然而这个生命周期函数不久后的版本应该就不会再被采用了。之前本想把数据 <code>fetch</code> 到手就立即渲染到 <code>render</code> 函数里的 <code>{this.state.myData}</code> 之类的，但他们都在<code>componentWillMount()</code> 里，后来想到设置子组件的方法，并且先通过条件渲染，确认了想要的 <code>myData</code> 非空值，才开始渲染子组件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; myData &amp;&amp; &lt;Quote/&gt; &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置 <code>&lt;body/&gt;</code> 的样式时用到的 <code>document.getElementsByTagName（）</code> 等类似方法获取到的是类数组对象，可以用数字索引 <code>[0]</code> 获取。</p>
+</li>
+<li><p>另外，在写的过程中发现了一些有点伤心的事情，居然有人在 <a href="https://developer.mozilla.org/zh-CN/" target="_blank" rel="noopener">MDN</a> 里下毒，将中文翻译与英文反着来，真是活久见。 </p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://shiftwatchout.github.io/2019/03/03/FCC-Program/" data-id="cjtp5jo0o0000b4orazb9ah4m" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/03/11/译-Eloquent-Javascript-Introduction/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          [译]Eloquent Javascript Introduction
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/02/10/Hexxo-World/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hexxo World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ECMAscript/">ECMAscript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ECMAscript/" style="font-size: 10px;">ECMAscript</a> <a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/React/" style="font-size: 10px;">React</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/03/26/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/11/译-Eloquent-Javascript-Introduction/">[译]Eloquent Javascript Introduction</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/03/FCC-Program/">FCC Program</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/10/Hexxo-World/">Hexxo World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
