@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>译-eloquent-javascript-Functions | Watchout的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Functions “人们认为计算机科学是天才的艺术，但实际情况恰恰相反，许多人做的事情都是建立在彼此的基础上的，就像一堵由小石头砌成的墙。”—–Donald Knuth   函数是JavaScript编程的基础。封装程序片段的理念有很多用途。它为我们提供了一种构造更大程序的方法，以减少重复工作，将命名与子程序关联起来，并将这些子程序彼此隔离开来。 函数最明显的应用是定义新词汇。在散文中创造新词通">
+<meta name="keywords" content="ECMAscript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="译-eloquent-javascript-Functions">
+<meta property="og:url" content="https://shiftwatchout.github.io/2019/03/27/译-eloquent-javascript-Functions/index.html">
+<meta property="og:site_name" content="Watchout的博客">
+<meta property="og:description" content="Functions “人们认为计算机科学是天才的艺术，但实际情况恰恰相反，许多人做的事情都是建立在彼此的基础上的，就像一堵由小石头砌成的墙。”—–Donald Knuth   函数是JavaScript编程的基础。封装程序片段的理念有很多用途。它为我们提供了一种构造更大程序的方法，以减少重复工作，将命名与子程序关联起来，并将这些子程序彼此隔离开来。 函数最明显的应用是定义新词汇。在散文中创造新词通">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://eloquentjavascript.net/img/chapter_picture_3.jpg">
+<meta property="og:updated_time" content="2019-03-27T04:09:11.323Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="译-eloquent-javascript-Functions">
+<meta name="twitter:description" content="Functions “人们认为计算机科学是天才的艺术，但实际情况恰恰相反，许多人做的事情都是建立在彼此的基础上的，就像一堵由小石头砌成的墙。”—–Donald Knuth   函数是JavaScript编程的基础。封装程序片段的理念有很多用途。它为我们提供了一种构造更大程序的方法，以减少重复工作，将命名与子程序关联起来，并将这些子程序彼此隔离开来。 函数最明显的应用是定义新词汇。在散文中创造新词通">
+<meta name="twitter:image" content="https://eloquentjavascript.net/img/chapter_picture_3.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Watchout的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Watchout的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://shiftwatchout.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-译-eloquent-javascript-Functions" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/27/译-eloquent-javascript-Functions/" class="article-date">
+  <time datetime="2019-03-27T04:05:20.000Z" itemprop="datePublished">2019-03-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      译-eloquent-javascript-Functions
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Functions"><a href="#Functions" class="headerlink" title="Functions"></a>Functions</h1><blockquote>
+<p>“人们认为计算机科学是天才的艺术，但实际情况恰恰相反，许多人做的事情都是建立在彼此的基础上的，就像一堵由小石头砌成的墙。”—–Donald Knuth</p>
+</blockquote>
+<p><img src="https://eloquentjavascript.net/img/chapter_picture_3.jpg" alt="img"></p>
+<p>函数是JavaScript编程的基础。封装程序片段的理念有很多用途。它为我们提供了一种构造更大程序的方法，以减少重复工作，将命名与子程序关联起来，并将这些子程序彼此隔离开来。</p>
+<p>函数最明显的应用是定义新词汇。在散文中创造新词通常是一种不好的文体。但在编程中，它是不可或缺的。</p>
+<p>成年英语使用者的词汇量约为2万个。很少有编程语言内置两万个命令。与人类语言相比，可用的词汇往往定义得更精确，因此灵活性更差。因此，我们通常必须引入新的概念，以避免语义重复。</p>
+<h2 id="Defining-a-function"><a href="#Defining-a-function" class="headerlink" title="Defining a function"></a>Defining a function</h2><p>函数定义是将一个值与一个函数进行绑定的行为。例如，这段代码定义<code>square</code>为一个生成给定数字的平方的函数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const square = function (x) &#123;</span><br><span class="line">  return x * x;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">console.log(square(12));</span><br><span class="line">// → 144</span><br></pre></td></tr></table></figure></p>
+<p>使用以关键字<code>function</code>开头的表达式创建函数。函数有一组参数(在本例中只有x)和一个函数体，函数体中包含调用函数时要执行的语句。以这种方式创建的函数的函数体必须始终用大括号括起来，即使它只包含一条语句。</p>
+<p>一个函数可以有多个参数，也可以没有参数。在下面的示例中，<code>makeNoise</code>没有列出任何参数名，而<code>power</code>列出了两个参数名：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">const makeNoise = function() &#123;</span><br><span class="line">  console.log(&quot;Pling!&quot;);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">makeNoise();</span><br><span class="line">// → Pling!</span><br><span class="line"></span><br><span class="line">const power = function(base, exponent) &#123;</span><br><span class="line">  let result = 1;</span><br><span class="line">  for (let count = 0; count &lt; exponent; count++) &#123;</span><br><span class="line">    result *= base;</span><br><span class="line">  &#125;</span><br><span class="line">  return result;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">console.log(power(2, 10));</span><br><span class="line">// → 1024</span><br></pre></td></tr></table></figure></p>
+<p>有些函数产生值，如幂和平方，而有些函数不产生值，如makeNoise，其惟一结果是额外效果。<code>return</code>语句确定函数返回的值。当控件遇到这样的语句时，它会立即跳出当前函数并将返回值返回给调用该函数的代码。<code>return</code>关键字后面没有表达式将导致函数返回<code>undefined</code>。根本没有返回语句的函数，如<code>makeNoise</code>，也会返回<code>undefined</code>。</p>
+<p>函数的参数的行为类似于常规绑定，但是它们的初始值是由函数调用时才给出的，而不是函数本身中的代码。</p>
+<h2 id="Bindings-and-scopes"><a href="#Bindings-and-scopes" class="headerlink" title="Bindings and scopes"></a>Bindings and scopes</h2><p>每个绑定都有一个范围，这是程序中绑定可见的部分。对于定义在任何函数或块之外的绑定，作用域是整个程序，您可以在任何地方引用这些绑定。这些被称为全局。</p>
+<p>使用<code>let</code>和<code>const</code>声明的绑定实际上是声明它们所在的块的本地绑定，因此，如果您在循环中创建其中一个绑定，那么循环前后的代码将无法“看到”它。在2015年以前的JavaScript中，只有函数创建了新的作用域，所以使用<code>var</code>关键字创建的旧式绑定在整个函数中都是可见的，如果它们不在函数体中，那么它们出现在整个函数作用域中或整个全局作用域中。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">let x = 10;</span><br><span class="line">if (true) &#123;</span><br><span class="line">  let y = 20;</span><br><span class="line">  var z = 30;</span><br><span class="line">  console.log(x + y + z);</span><br><span class="line">  // → 60</span><br><span class="line">&#125;</span><br><span class="line">// y is not visible here</span><br><span class="line">console.log(x + z);</span><br><span class="line">// → 40</span><br></pre></td></tr></table></figure></p>
+<p>每个作用域都可以查看它上层的作用域，因此在示例中的<code>if</code>块中<code>x</code>是可见的。例外情况是，当多个绑定具有相同的名称时，代码只能看到最内层的绑定。例如，当<code>halve</code>函数中的代码指向<code>n</code>时，它看到的是自己的<code>n</code>，而不是全局<code>n</code>。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">const halve = function(n) &#123;</span><br><span class="line">  return n / 2;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">let n = 10;</span><br><span class="line">console.log(halve(100));</span><br><span class="line">// → 50</span><br><span class="line">console.log(n);</span><br><span class="line">// → 10</span><br></pre></td></tr></table></figure></p>
+<h2 id="Nested-scope"><a href="#Nested-scope" class="headerlink" title="Nested scope"></a>Nested scope</h2><p>JavaScript不仅区分全局绑定和本地绑定。块和函数可以在其他块和函数中创建，从而产生多级的局部性。</p>
+<p>例如，该函数输出制作一批鹰嘴豆泥所需的配料，其中包含另一个函数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">const hummus = function(factor) &#123;</span><br><span class="line">  const ingredient = function(amount, unit, name) &#123;</span><br><span class="line">    let ingredientAmount = amount * factor;</span><br><span class="line">    if (ingredientAmount &gt; 1) &#123;</span><br><span class="line">      unit += &quot;s&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    console.log(`$&#123;ingredientAmount&#125; $&#123;unit&#125; $&#123;name&#125;`);</span><br><span class="line">  &#125;;</span><br><span class="line">  ingredient(1, &quot;can&quot;, &quot;chickpeas&quot;);</span><br><span class="line">  ingredient(0.25, &quot;cup&quot;, &quot;tahini&quot;);</span><br><span class="line">  ingredient(0.25, &quot;cup&quot;, &quot;lemon juice&quot;);</span><br><span class="line">  ingredient(1, &quot;clove&quot;, &quot;garlic&quot;);</span><br><span class="line">  ingredient(2, &quot;tablespoon&quot;, &quot;olive oil&quot;);</span><br><span class="line">  ingredient(0.5, &quot;teaspoon&quot;, &quot;cumin&quot;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>外部函数定义的变量<code>factor</code>在<code>ingredient</code>函数内是可见的。但它的局部变量，如<code>unit</code>和<code>ingredientAmount</code>，在外部函数中不可见。</p>
+<p>在一个块中可见的变量集合由该块在程序中的位置决定。上级局部作用域对次级局部作用域都是可见的，并且全局作用域对所有作用域都是可见的。这种绑定可见性的方法称为词法作用域。</p>
+<h2 id="Functions-as-values"><a href="#Functions-as-values" class="headerlink" title="Functions as values"></a>Functions as values</h2><p>函数绑定通常只是作为特定程序片段的名称。这样的绑定只定义一次，从不更改。这样让人很容易混淆函数和普通值。</p>
+<p>但两者是不同的。函数值可以做所有其他普通值可以做的事情，你可以在任意表达式中使用它，而不仅仅是调用它。可以在新的绑定中存储新的函数值，将其作为参数传递给函数，等等。类似地，包含函数的绑定仍然只是常规绑定，如果不是常量，也可以赋一个新值，就像这样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let launchMissiles = function() &#123;</span><br><span class="line">  missileSystem.launch(&quot;now&quot;);</span><br><span class="line">&#125;;</span><br><span class="line">if (safeMode) &#123;</span><br><span class="line">  launchMissiles = function() &#123;/* do nothing */&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在第5章中，我们将讨论通过将函数值传递给其他函数可以完成的有趣的事情。</p>
+<h2 id="Declaration-notation"><a href="#Declaration-notation" class="headerlink" title="Declaration notation"></a>Declaration notation</h2><p>创建函数绑定时有一种稍微短一些的方法。当在语句开头使用<code>function</code>关键字时，它的工作方式是不同的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function square(x) &#123;</span><br><span class="line">  return x * x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这是一个函数声明。语句定义绑定<code>square</code>并将其指向给定的函数。这样写起来稍微容易一些，而且函数后面不需要分号。</p>
+<p>这种形式的函数定义有一个微妙之处。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">console.log(&quot;The future says:&quot;, future());</span><br><span class="line"></span><br><span class="line">function future() &#123;</span><br><span class="line">  return &quot;You&apos;ll never have flying cars&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>前面的代码可以运行，就算函数是在调用它的代码之后定义的。函数声明不是常规的自上而下控制流的一部分。它们会被移到作用域的顶部，并且可以被该作用域中的所有代码使用。这有时很有用，因为它提供了以一种似乎有意义的方式排序代码的自由，而不必担心在使用所有函数之前必须定义它们。</p>
+<h2 id="Arrow-functions"><a href="#Arrow-functions" class="headerlink" title="Arrow functions"></a>Arrow functions</h2><p>函数有第三种表示法，和其他的看起来很不一样。它没有使用 <code>function</code>关键字，而是使用一个由等号和大于号组成的箭头(=&gt;)(不要与大于等于号的操作符混淆，它的写法是&gt;=)。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const power = (base, exponent) =&gt; &#123;</span><br><span class="line">  let result = 1;</span><br><span class="line">  for (let count = 0; count &lt; exponent; count++) &#123;</span><br><span class="line">    result *= base;</span><br><span class="line">  &#125;</span><br><span class="line">  return result;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>箭头位于参数之后，然后是函数体。它表示“这样的输入(参数)产生这样的结果(函数体)”。</p>
+<p>当只有一个参数名时，可以省略参数列表周围的圆括号。如果函数体是单个表达式，而不是大括号中的块，则该表达式将直接被函数返回。所以，这两个关于平方的定义是一样的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const square1 = (x) =&gt; &#123; return x * x; &#125;;</span><br><span class="line">const square2 = x =&gt; x * x;</span><br></pre></td></tr></table></figure></p>
+<p>当一个箭头函数没有任何参数时，它的参数列表就是一个空的圆括号<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const horn = () =&gt; &#123;</span><br><span class="line">  console.log(&quot;Toot&quot;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>在这种语言中，没有必要同时使用箭头函数和函数表达式。除了我们将在第6章讨论的一个小细节之外，它们发挥的作用其实是一样的。2015年JavaScript添加了箭头函数，主要是为了以更简洁的方式编写函数表达式。我们将在第五章中经常用到它们。</p>
+<h2 id="The-call-stack"><a href="#The-call-stack" class="headerlink" title="The call stack"></a>The call stack</h2><p>控制流经函数的方式有些复杂。让我们仔细看看。下面是一个简单的,执行一些函数调用的程序：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function greet(who) &#123;</span><br><span class="line">  console.log(&quot;Hello &quot; + who);</span><br><span class="line">&#125;</span><br><span class="line">greet(&quot;Harry&quot;);</span><br><span class="line">console.log(&quot;Bye&quot;);</span><br></pre></td></tr></table></figure></p>
+<p>这个程序大致是这样运行的:调用<code>greet</code>会导致控件跳转到该函数的开头(第2行)。<code>console.log</code>接受控制权，完成它的工作，然后将控制权返回到第2行。在那里，它到达<code>greet</code>函数的末尾，最后回到调用它的地方，即第4行。之后的行再次调用<code>console.log</code>。所有的值都返回之后，程序就结束了。</p>
+<p>我们可以像这样用图表表示控制流程：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">not in function</span><br><span class="line">   in greet</span><br><span class="line">        in console.log</span><br><span class="line">   in greet</span><br><span class="line">not in function</span><br><span class="line">   in console.log</span><br><span class="line">not in function</span><br></pre></td></tr></table></figure></p>
+<p>因为函数返回时必须跳转回调用它的位置，所以计算机必须记住调用发生的上下文。在上面的情况下，<code>console.log</code>必须在完成后返回到<code>greet</code>函数。在下面的情况下，它返回到程序的末尾。</p>
+<p>计算机存储此上下文的位置是调用堆栈。每次调用函数时，当前上下文都存储在这个堆栈的顶部。当函数返回时，它从堆栈中删除顶部上下文并使用该上下文继续执行。</p>
+<p>存储这个堆栈需要计算机内存中的空间。当堆栈变得太大时，计算机将发出堆栈空间不足或递归过多之类的失败消息。下面的代码通过向计算机提出一个非常难的问题来说明这一点，这个问题会在两个函数之间无限的来回。如果计算机有一个无限堆栈，它将是无限的。但实际上，我们将耗尽空间，或者会破坏堆栈。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function chicken() &#123;</span><br><span class="line">  return egg();</span><br><span class="line">&#125;</span><br><span class="line">function egg() &#123;</span><br><span class="line">  return chicken();</span><br><span class="line">&#125;</span><br><span class="line">console.log(chicken() + &quot; came first.&quot;);</span><br><span class="line">// → ??</span><br></pre></td></tr></table></figure></p>
+<h2 id="Optional-Arguments"><a href="#Optional-Arguments" class="headerlink" title="Optional Arguments"></a>Optional Arguments</h2><p>下面的代码将会毫无问题的执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function square(x) &#123; return x * x; &#125;</span><br><span class="line">console.log(square(4, true, &quot;hedgehog&quot;));</span><br><span class="line">// → 16</span><br></pre></td></tr></table></figure></p>
+<p>我们定义了只有一个参数的<code>square</code>函数。然而，当我们传入3个参数来调用它时，它并没有抱怨。它忽略额外的参数并计算第一个参数的平方。</p>
+<p>JavaScript对于传递给函数的参数的数量非常宽容。如果你传入太多参数，多余的就会被忽略。如果传递的参数太少，则会为缺少的参数分配<code>undefined</code>。</p>
+<p>这样做的缺点是，很可能您会不小心将错误数量的参数传递给函数。而谁也不会告诉你。</p>
+<p>好处是，这种行为可用于允许使用不同数量的参数调用函数。例如，这个减号函数试图通过运算一个或两个参数来模拟<code>-</code>运算符：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function minus(a, b) &#123;</span><br><span class="line">  if (b === undefined) return -a;</span><br><span class="line">  else return a - b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(minus(10));</span><br><span class="line">// → -10</span><br><span class="line">console.log(minus(10, 5));</span><br><span class="line">// → 5</span><br></pre></td></tr></table></figure></p>
+<p>如果在参数后面加上<code>=</code>运算符和表达式，当没有给出参数时，表达式的值将被赋予该参数。</p>
+<p>例如，这个版本的<code>power</code>第二个参数是可选的。如果不提供对应参数或传递<code>undefined</code>，它将默认为2，函数将表现为<code>square</code>。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function power(base, exponent = 2) &#123;</span><br><span class="line">  let result = 1;</span><br><span class="line">  for (let count = 0; count &lt; exponent; count++) &#123;</span><br><span class="line">    result *= base;</span><br><span class="line">  &#125;</span><br><span class="line">  return result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(power(4));</span><br><span class="line">// → 16</span><br><span class="line">console.log(power(2, 6));</span><br><span class="line">// → 64</span><br></pre></td></tr></table></figure></p>
+<p>在下一章中，我们将看到函数体如何获取它传递的所有参数列表。这很有帮助，因为它使函数可以接受任意数量的参数。例如，<code>console.log</code>就可以做到，它输出所有给定的值。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">console.log(&quot;C&quot;, &quot;O&quot;, 2);</span><br><span class="line">// → C O 2</span><br></pre></td></tr></table></figure></p>
+<h2 id="Closure"><a href="#Closure" class="headerlink" title="Closure"></a>Closure</h2><p>将函数视为值，以及每次调用函数都会重建本地绑定的事实，带来了一个有趣的问题。当创建本地绑定的函数调用不再活动时，本地绑定会发生什么情况？</p>
+<p>下面的代码展示了一个例子。它定义了一个函数<code>wrapValue</code>，用于创建本地绑定。然后返回一个能够访问并返回这个本地绑定的函数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function wrapValue(n) &#123;</span><br><span class="line">  let local = n;</span><br><span class="line">  return () =&gt; local;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let wrap1 = wrapValue(1);</span><br><span class="line">let wrap2 = wrapValue(2);</span><br><span class="line">console.log(wrap1());</span><br><span class="line">// → 1</span><br><span class="line">console.log(wrap2());</span><br><span class="line">// → 2</span><br></pre></td></tr></table></figure></p>
+<p>结果如你所料，两个实例的绑定都被获取到了。这种情况很好地说明了这样一个事实：每个调用都重新创建本地绑定，不同的调用不能相互践踏彼此的本地绑定。</p>
+<p>这种能够在封闭作用域内引用本地绑定的特定实例的特性称为闭包。引用来自其周围的本地范围的绑定的函数称为闭包。这种行为不仅让我们不必担心绑定的生命周期，而且让我们能够以某种创造性的方式使用函数值。</p>
+<p>只需稍加修改，我们就可以将前面的示例转换为创建可以乘以任意数量函数的方法。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function multiplier(factor) &#123;</span><br><span class="line">  return number =&gt; number * factor;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let twice = multiplier(2);</span><br><span class="line">console.log(twice(5));</span><br><span class="line">// → 10</span><br></pre></td></tr></table></figure></p>
+<p>实际上并不需要<code>wrapValue</code>示例中显式地进行本地绑定，死板地定下哪个值，因为参数本身就是本地绑定。</p>
+<p>想通这样的程序需要一些实践。一个好的理论模型是将函数值看作包含在它们的函数体和创建它们的环境中的代码。调用时，对函数体可见的是创建它的环境，而不是调用它的环境。</p>
+<p>在本例中，<code>multiplier</code>被调用并创建了一个<code>factor</code>参数被绑定为2环境。它返回的函数值被存储为<code>twice</code>，会记住这个环境。当它被调用时，它将参数乘以2。</p>
+<h2 id="Recursion"><a href="#Recursion" class="headerlink" title="Recursion"></a>Recursion</h2><p>一个函数调用它自神是完全可以的，只要它不过于频繁地这样做以至于溢出堆栈。调用自身的函数称为递归函数。递归允许以不同的风格编写一些函数。以<code>power</code>的这种实现为例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function power(base, exponent) &#123;</span><br><span class="line">  if (exponent == 0) &#123;</span><br><span class="line">    return 1;</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    return base * power(base, exponent - 1);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(power(2, 3));</span><br><span class="line">// → 8</span><br></pre></td></tr></table></figure></p>
+<p>这与数学家定义取幂的方式相当接近，并且可以说比循环变量更清楚地描述了这个概念。函数用更小的指数多次调用自己来实现重复乘法。</p>
+<p>但是这个实现有一个问题:在JavaScript的实现中，它的运行时间大约是循环版本的三倍。运行一个简单的循环通常比多次调用一个函数开销要小。</p>
+<p>速度与优雅的两难境地很有趣。你可以把它看作是人类友好型和机器友好型之间的一种连续统一体。几乎任何程序都可以通过使其更大、更复杂来加快速度。程序员必须决定一个适当的平衡。</p>
+<p>在<code>power</code>函数的案例中，不优雅的(循环)版本相当简单易读。用递归版本替换它没有多大意义。然而，一个为了更直观而放弃效率的程序通常是更有帮助的。</p>
+<p>担心效率会分散注意力。这是使程序设计复杂化的另一个因素，当您你在做一些已经很困难的事情时，额外需要担心的事情可能会使您陷入瘫痪。</p>
+<p>因此，总是从写一些无误且容易理解的东西开始。如果你担心它太慢(通常不会)，因为大多数代码的执行频率都不够高，不足以花费大量时间进行度量，如果需要的话，你可以对其进行改进。</p>
+<p>递归并不总是循环的低效替代品。有些问题用递归比循环更容易解决。大多数情况下，这些问题需要探索或处理多个分支，每个分支可能会再次扩展到更多的分支。</p>
+<p>考虑这个难题：从数字1开始，反复地加5或乘以3，就可以得到一组无限多的数字。你要写一个函数，给定一个数字，试图找到一个加法和乘法的序列，得到这个数字。</p>
+<p>例如，数字13可以先乘以3，然后再加两次5，而数字15根本就不能出现在其中。</p>
+<p>这是递归版本：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">function findSolution(target) &#123;</span><br><span class="line">  function find(current, history) &#123;</span><br><span class="line">    if (current == target) &#123;</span><br><span class="line">      return history;</span><br><span class="line">    &#125; else if (current &gt; target) &#123;</span><br><span class="line">      return null;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      return find(current + 5, `($&#123;history&#125; + 5)`) ||</span><br><span class="line">             find(current * 3, `($&#123;history&#125; * 3)`);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  return find(1, &quot;1&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(findSolution(24));</span><br><span class="line">// → (((1 * 3) + 5) * 3)</span><br></pre></td></tr></table></figure></p>
+<p>注意，这个程序不一定能找到最短的操作序列。当它找到任何序列时，就满足条件了。</p>
+<p>如果你不能马上看到它是如何工作的，也没关系。让我们来过一遍，因为它是一个很好的递归思维练习。</p>
+<p>内部函数<code>find</code>执行实际的递归。它接受两个参数：当前数字和一个字符串，该字符串记录了我们如何达到这个数字。如果找到一个解决方案，它将返回一个字符串，该字符串显示如何到达目标。如果无法从这个数字开始找到解决方案，则返回<code>null</code>。</p>
+<p>为此，函数执行以下三个操作之一。如果当前数是目标值，则当前历史记录是到达该目标的一种方法，因此将返回它。如果当前数大于目标值，则没有必要进一步研究这个分支，因为加法和乘法只会使这个数变大，因此返回<code>null</code>。最后，如果仍然低于目标值，函数将尝试从当前数开始的两种可能路径，两次调用自己，一次调用加法，一次调用乘法。如果第一个调用返回的东西不是<code>null</code>，那么它将返回。否则，将返回第二个调用，不管它生成的是字符串还是<code>null</code>。</p>
+<p>为了更好地理解这个函数是如何给出我们正在寻找的值的，让我们看看在搜索数字13的解决方案时所执行的所有调用。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">find(1, &quot;1&quot;)</span><br><span class="line">  find(6, &quot;(1 + 5)&quot;)</span><br><span class="line">    find(11, &quot;((1 + 5) + 5)&quot;)</span><br><span class="line">      find(16, &quot;(((1 + 5) + 5) + 5)&quot;)</span><br><span class="line">        too big</span><br><span class="line">      find(33, &quot;(((1 + 5) + 5) * 3)&quot;)</span><br><span class="line">        too big</span><br><span class="line">    find(18, &quot;((1 + 5) * 3)&quot;)</span><br><span class="line">      too big</span><br><span class="line">  find(3, &quot;(1 * 3)&quot;)</span><br><span class="line">    find(8, &quot;((1 * 3) + 5)&quot;)</span><br><span class="line">      find(13, &quot;(((1 * 3) + 5) + 5)&quot;)</span><br><span class="line">        found!</span><br></pre></td></tr></table></figure></p>
+<p>缩进表示调用堆栈的深度。第一次调用<code>find</code>时，它首先调用自身来探索以<code>(1 + 5)</code>开头的解决方案。该调用将进一步递归地探索每个产生小于或等于目标数字的连续解决方案。只要它没有找到命中目标的函数，它将返回<code>null</code>给第一个调用。在这里，<code>||</code>操作符导致探索<code>(1 * 3)</code>的调用发生。这个搜索有更多的运气，它的第一次递归调用，再通过另一个递归调用，恰好命中目标值。最内部的调用向上返回一个字符串，中间调用中的每个<code>||</code>操作符都传递该字符串，最终返回解决方案。</p>
+<h2 id="Growing-functions"><a href="#Growing-functions" class="headerlink" title="Growing functions"></a>Growing functions</h2><p>将函数引入程序有两种或多或少比较自然的方法。</p>
+<p>第一种是，你发现自己多次编写类似的代码。而你不愿意重复编写。有更多的代码意味着有更多的空间来隐藏错误，也意味着人们要理解程序需要阅读更多的内容。所以你把重复的功能合在一起，找了一个好名字，并把它放进一个函数。</p>
+<p>第二种是，您发现您需要一些尚未编写的功能，而这些功能听起来应该具有自己的功能。首先给函数命名，然后写出它的主体。您甚至可以在实际定义函数本身之前就开始编写使用该函数的代码。</p>
+<p>为一个函数找到一个好名字有多难，这很好地说明了您要包装的概念有多清晰。让我们看一个例子。</p>
+<p>我们想要编写一个程序来打印两个数字:农场里奶牛和鸡的数字，奶牛和鸡在它们后面加上单词“Cows”和“Chickens”，在这两个数字前面加0，这样它们就总是三个数字长。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">007 Cows</span><br><span class="line">011 Chickens</span><br></pre></td></tr></table></figure></p>
+<p>这要求一个函数有两个参数牛的数量和鸡的数量。让我们开始编码。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function printFarmInventory(cows, chickens) &#123;</span><br><span class="line">  let cowString = String(cows);</span><br><span class="line">  while (cowString.length &lt; 3) &#123;</span><br><span class="line">    cowString = &quot;0&quot; + cowString;</span><br><span class="line">  &#125;</span><br><span class="line">  console.log(`$&#123;cowString&#125; Cows`);</span><br><span class="line">  let chickenString = String(chickens);</span><br><span class="line">  while (chickenString.length &lt; 3) &#123;</span><br><span class="line">    chickenString = &quot;0&quot; + chickenString;</span><br><span class="line">  &#125;</span><br><span class="line">  console.log(`$&#123;chickenString&#125; Chickens`);</span><br><span class="line">&#125;</span><br><span class="line">printFarmInventory(7, 11);</span><br></pre></td></tr></table></figure></p>
+<p>在字符串表达式之后写入<code>.length</code>将会得到该字符串的长度。因此，<code>while</code>循环不断在数字字符串前面添加零，直到它们至少有三个字符长为止。</p>
+<p>任务完成！但就在我们准备把代码(连同一份巨额发票)发送给农民时，她打电话告诉我们，她也开始养猪了，我们能否把软件扩展到打印猪的数量。</p>
+<p>我们当然可以。但就在我们再次复制粘贴这四行代码的过程中，我们停下来重新考虑。一定有更好的办法。这是第一次尝试：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function printZeroPaddedWithLabel(number, label) &#123;</span><br><span class="line">  let numberString = String(number);</span><br><span class="line">  while (numberString.length &lt; 3) &#123;</span><br><span class="line">    numberString = &quot;0&quot; + numberString;</span><br><span class="line">  &#125;</span><br><span class="line">  console.log(`$&#123;numberString&#125; $&#123;label&#125;`);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function printFarmInventory(cows, chickens, pigs) &#123;</span><br><span class="line">  printZeroPaddedWithLabel(cows, &quot;Cows&quot;);</span><br><span class="line">  printZeroPaddedWithLabel(chickens, &quot;Chickens&quot;);</span><br><span class="line">  printZeroPaddedWithLabel(pigs, &quot;Pigs&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">printFarmInventory(7, 11, 3);</span><br></pre></td></tr></table></figure></p>
+<p>它成功运行了!但是<code>printZeroPaddedWithLabel</code>这个名称有点尴尬。它将打印、补零和在单个函数中添加标签这三件事合并在一起。</p>
+<p>让我们试着挑出一个概念，而不是大量地重复我们的程序的重复部分。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function zeroPad(number, width) &#123;</span><br><span class="line">  let string = String(number);</span><br><span class="line">  while (string.length &lt; width) &#123;</span><br><span class="line">    string = &quot;0&quot; + string;</span><br><span class="line">  &#125;</span><br><span class="line">  return string;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function printFarmInventory(cows, chickens, pigs) &#123;</span><br><span class="line">  console.log(`$&#123;zeroPad(cows, 3)&#125; Cows`);</span><br><span class="line">  console.log(`$&#123;zeroPad(chickens, 3)&#125; Chickens`);</span><br><span class="line">  console.log(`$&#123;zeroPad(pigs, 3)&#125; Pigs`);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">printFarmInventory(7, 16, 3);</span><br></pre></td></tr></table></figure></p>
+<p>一个具有像<code>zeroPad</code>这样漂亮而明显的名称的函数可以让读代码的人更容易地理解它的功能。这样的函数在很多情况下都是有用的而不仅仅是在这个特定的程序里。例如，您可以使用它来帮助打印排列整齐的数字表。</p>
+<p>我们的函数应该有多智能和多用途？我们可以编写任何东西，从一个极其简单的函数(它只能将一个数字填充为三个字符宽)到一个复杂的通用数字格式系统(它处理小数、负数、小数点对齐，用不同字符填充等等)。</p>
+<p>一个有用的原则是，除非你绝对确定你会需要它，否则不要添加聪明。为你遇到的每一个功能编写通用框架是很诱人的。抗拒这种冲动。你不会完成任何真正的工作，你只会编写一堆你用不上的代码。</p>
+<h2 id="Functions-and-side-effects"><a href="#Functions-and-side-effects" class="headerlink" title="Functions and side effects"></a>Functions and side effects</h2><p>函数可以大致分为它们的额外效果而调用的函数和为了它们的返回值而调用的函数。(当然也有可能产生额外效果并返回一个值。)</p>
+<p>农场示例中的第一个辅助函数<code>printZeroPaddedWithLabel</code>被调用，是为了获得它的额外效果：它打印一行字。第二个版本<code>zeroPad</code>是为了获取它的返回值而被调用。第二种方法比第一种方法在更多情况下有用，这并非巧合。有返回值的函数比直接展示额外效果的函数更容易以新方式组合。</p>
+<p>纯函数是一种特殊的值生成函数，它不仅没有额外效果，且不依赖于来自其他代码的额外效果，例如，它不读取值可能发生变化的全局绑定。纯函数有一个令人愉快的特性，当使用相同的参数调用它时，它总是生成相同的值(并且不做任何其他事情)。对这样一个函数的调用可以用它的返回值代替，而不改变代码的含义。当您不确定一个纯函数是否正确工作时，您可以通过简单地调用来测试它，并知道如果它在该上下文中是否有效。非纯函数往往需要更多的脚手架来测试。</p>
+<p>不过，在编写不纯的函数没有必要感到难受，或发动圣战将它们从代码中清除时。额外效果通常是有用的。没有办法编写一个纯函数版的<code>console.log</code>，<code>console.log</code>的存在很美好。当我们使用副作用时，一些操作也更容易以有效的方式表达，因此计算速度可以成为避免纯化的一个原因。</p>
+<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>本章教你如何编写自己的函数。<code>function</code>关键字用作表达式时，可以创建函数值。当作为语句使用时，可以使用它声明绑定并将函数作为其值。箭头函数是另一种创建函数的方法。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// Define f to hold a function value</span><br><span class="line">const f = function(a) &#123;</span><br><span class="line">  console.log(a + 2);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// Declare g to be a function</span><br><span class="line">function g(a, b) &#123;</span><br><span class="line">  return a * b * 3.5;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// A less verbose function value</span><br><span class="line">let h = a =&gt; a % 3;</span><br></pre></td></tr></table></figure></p>
+<p>理解函数的一个关键方面是理解作用域。每个块创建一个新的作用域。在给定作用域中声明的参数和绑定是局部的，从外部是不可见的。使用<code>var</code>声明的绑定的行为不同，它们最终位于最近的函数作用域或全局作用域。</p>
+<p>将程序执行的任务分离到不同的函数中是有帮助的。您不需要重复很多次，而且函数可以通过将代码分组到执行特定任务的各个部分来帮助组织程序。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://shiftwatchout.github.io/2019/03/27/译-eloquent-javascript-Functions/" data-id="cjtqotp7y000d60ornl9n3rrp" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ECMAscript/">ECMAscript</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/03/27/译-Green-Chemistry-Principles-And-Practice/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          译-Green-Chemistry-Principles-And-Practice
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/03/27/译-eloquent-javascript-Values-Types-and-Operators/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">译-eloquent-javascript-Values,Types and Operators</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chemistry/">Chemistry</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ECMAscript/">ECMAscript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Chemistry/" style="font-size: 10px;">Chemistry</a> <a href="/tags/ECMAscript/" style="font-size: 20px;">ECMAscript</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/React/" style="font-size: 10px;">React</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/03/27/译-Green-Chemistry-Principles-And-Practice/">译-Green-Chemistry-Principles-And-Practice</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/27/译-eloquent-javascript-Functions/">译-eloquent-javascript-Functions</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/27/译-eloquent-javascript-Values-Types-and-Operators/">译-eloquent-javascript-Values,Types and Operators</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/11/译-Eloquent-Javascript-Introduction/">[译]Eloquent Javascript Introduction</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/03/FCC-Program/">FCC Program</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
