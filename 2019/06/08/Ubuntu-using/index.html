@@ -5,15 +5,20 @@
   
 
   
-  <title>归档: 2019/3 | Watchout的博客</title>
+  <title>Ubuntu using | Watchout的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Watchout的博客">
-<meta property="og:url" content="https://shiftwatchout.github.io/archives/2019/03/index.html">
+  <meta name="description" content="安装 nodejs目前最受推荐的便是使用系统自带包管理器来安装。 先设置包管理器的源 $ sudo vim /etc/apt/sources.list.d/nodesource.list 使用下方的源来代替源内的 URL  https://mirrors.ustc.edu.cn/nodesource/deb/node_{版本号，例如: 10}.x  然后 $ curl -sL https://de">
+<meta name="keywords" content="Ubuntu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu using">
+<meta property="og:url" content="https://shiftwatchout.github.io/2019/06/08/Ubuntu-using/index.html">
 <meta property="og:site_name" content="Watchout的博客">
+<meta property="og:description" content="安装 nodejs目前最受推荐的便是使用系统自带包管理器来安装。 先设置包管理器的源 $ sudo vim /etc/apt/sources.list.d/nodesource.list 使用下方的源来代替源内的 URL  https://mirrors.ustc.edu.cn/nodesource/deb/node_{版本号，例如: 10}.x  然后 $ curl -sL https://de">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-06-08T12:59:01.896Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Watchout的博客">
+<meta name="twitter:title" content="Ubuntu using">
+<meta name="twitter:description" content="安装 nodejs目前最受推荐的便是使用系统自带包管理器来安装。 先设置包管理器的源 $ sudo vim /etc/apt/sources.list.d/nodesource.list 使用下方的源来代替源内的 URL  https://mirrors.ustc.edu.cn/nodesource/deb/node_{版本号，例如: 10}.x  然后 $ curl -sL https://de">
   
     <link rel="alternate" href="/atom.xml" title="Watchout的博客" type="application/atom+xml">
   
@@ -60,116 +65,74 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/03/27/译-Green-Chemistry-Principles-And-Practice/" class="archive-article-date">
-  <time datetime="2019-03-27T04:06:33.000Z" itemprop="datePublished">3月 27</time>
+        <section id="main"><article id="post-Ubuntu-using" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/08/Ubuntu-using/" class="article-date">
+  <time datetime="2019-06-08T12:55:27.000Z" itemprop="datePublished">2019-06-08</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/27/译-Green-Chemistry-Principles-And-Practice/">译-Green-Chemistry-Principles-And-Practice</a>
+    <h1 class="article-title" itemprop="name">
+      Ubuntu using
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/03/27/译-eloquent-javascript-Functions/" class="archive-article-date">
-  <time datetime="2019-03-27T04:05:20.000Z" itemprop="datePublished">3月 27</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/27/译-eloquent-javascript-Functions/">译-eloquent-javascript-Functions</a>
-    </h1>
-  
+        <h3 id="安装-nodejs"><a href="#安装-nodejs" class="headerlink" title="安装 nodejs"></a>安装 nodejs</h3><p>目前最受推荐的便是使用系统自带包管理器来安装。</p>
+<p>先设置包管理器的源</p>
+<p><code>$ sudo vim /etc/apt/sources.list.d/nodesource.list</code></p>
+<p>使用下方的源来代替源内的 URL</p>
+<blockquote>
+<p><a href="https://mirrors.ustc.edu.cn/nodesource/deb/node_{版本号，例如" target="_blank" rel="noopener">https://mirrors.ustc.edu.cn/nodesource/deb/node_{版本号，例如</a>: 10}.x</p>
+</blockquote>
+<p>然后</p>
+<p><code>$ curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -</code></p>
+<p>更新 APT 源</p>
+<p><code>$ sudo apt-get update</code></p>
+<p>通过 APT 安装</p>
+<p><code>$ sudo apt-get install -y nodejs</code></p>
+<p>检查 nodejs 版本</p>
+<p><code>$ node -v</code></p>
+<p>升级 node 至最新 LTS 版本：将上面 <code>curl</code> 那一步的 node 版本改为最新的稳定版，源里的 URL 会被自动更改，再更新 APT 源，然后使用更新命令，</p>
+<p><code>$ sudo apt upgrade</code></p>
+<p>升级后清理掉旧版本。</p>
+<p><code>$ sudo apt autoclean</code></p>
+<p>本地使用 mongo 前先启动服务，不然进不了命令行工具，然后 <code>mongo</code></p>
+<p><code>sudo service mongod start</code></p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/03/27/译-eloquent-javascript-Values-Types-and-Operators/" class="archive-article-date">
-  <time datetime="2019-03-27T04:03:34.000Z" itemprop="datePublished">3月 27</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/27/译-eloquent-javascript-Values-Types-and-Operators/">译-eloquent-javascript-Values,Types and Operators</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/03/11/译-eloquent-javascript-Introduction/" class="archive-article-date">
-  <time datetime="2019-03-11T11:13:19.000Z" itemprop="datePublished">3月 11</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://shiftwatchout.github.io/2019/06/08/Ubuntu-using/" data-id="cjwniztop0004p8orcs59aszv" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/11/译-eloquent-javascript-Introduction/">[译]Eloquent Javascript Introduction</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/03/03/FCC-Program/" class="archive-article-date">
-  <time datetime="2019-03-03T01:11:45.000Z" itemprop="datePublished">3月 3</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/03/FCC-Program/">FCC Program</a>
-    </h1>
-  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
 
-    </header>
+    </footer>
   </div>
-</article>
+  
+    
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2019/06/08/译-Cargo-Sorting-DNA-Robot/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">译-Cargo Sorting DNA Robot</div>
+    </a>
   
+</nav>
 
+  
+</article>
 
 </section>
         
