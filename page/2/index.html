@@ -5,11 +5,11 @@
   
 
   
-  <title>Tag: Chemistry | Watchout的博客</title>
+  <title>Watchout的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Watchout的博客">
-<meta property="og:url" content="https://shiftwatchout.github.io/tags/Chemistry/index.html">
+<meta property="og:url" content="https://shiftwatchout.github.io/page/2/index.html">
 <meta property="og:site_name" content="Watchout的博客">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
@@ -62,76 +62,75 @@
       <div class="outer">
         <section id="main">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/06/08/译-Cargo-Sorting-DNA-Robot/" class="archive-article-date">
-  <time datetime="2019-06-08T12:55:04.000Z" itemprop="datePublished">6月 8</time>
+    <article id="post-Hexxo-World" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/02/10/Hexxo-World/" class="article-date">
+  <time datetime="2019-02-10T15:37:38.000Z" itemprop="datePublished">2019-02-10</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/08/译-Cargo-Sorting-DNA-Robot/">译-Cargo Sorting DNA Robot</a>
+      <a class="article-title" href="/2019/02/10/Hexxo-World/">Hexxo World</a>
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/04/14/译-Biomass-Gasification/" class="archive-article-date">
-  <time datetime="2019-04-14T13:16:25.000Z" itemprop="datePublished">4月 14</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/14/译-Biomass-Gasification/">Biomass Gasification</a>
-    </h1>
-  
+        <h2 id="在Github-Page上用Hexo搭建博客纪录"><a href="#在Github-Page上用Hexo搭建博客纪录" class="headerlink" title="在Github Page上用Hexo搭建博客纪录"></a>在Github Page上用Hexo搭建博客纪录</h2><h3 id="第一步：本地安装Hexo"><a href="#第一步：本地安装Hexo" class="headerlink" title="第一步：本地安装Hexo"></a>第一步：本地安装Hexo</h3><p>安装命令：<br><code>npm install hexo -g</code></p>
+<p>初始化：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo init blog</span><br><span class="line">cd blog</span><br><span class="line">npm install</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure></p>
+<h3 id="第二步：推送至Github-Pages"><a href="#第二步：推送至Github-Pages" class="headerlink" title="第二步：推送至Github Pages"></a>第二步：推送至Github Pages</h3><p>设置根目录<code>_config.yml</code>：</p>
+<ul>
+<li><p>这样是中文，不写是英文<br><code>language: zh-CN</code></p>
+</li>
+<li><p><code>url: [Your website address](https://shiftwatchout.github.io/)</code></p>
+</li>
+<li><p>根目录在哪里，github就写斜杠，有些服务器会多一层路径<br><code>root: /</code></p>
+</li>
+<li><p>这样可以在 <code>/source</code> 里面放一个 README.md，推送的时候自动传到 Github 上面<br><code>skip_render: README.md</code></p>
+</li>
+<li><p>换主题<br><code>theme: landscape</code></p>
+</li>
+<li><p>推送至Github</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: https://github.com/ShiftWatchOut/shiftwatchout.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="第三步：编辑新文章"><a href="#第三步：编辑新文章" class="headerlink" title="第三步：编辑新文章"></a>第三步：编辑新文章</h3><p>创建新article<br><code>hexo new &quot;blog name&quot;</code><br>进入<code>source/_posts</code>文件夹编辑<code>blog-name.MD</code>(空格、加号会变短横)<br>推送代码：<code>hexo g -d</code></p>
+<h3 id="常见错误"><a href="#常见错误" class="headerlink" title="常见错误"></a>常见错误</h3><ol>
+<li><code>ERROR Deployer not found: git</code>，处理方法<code>npm install hexo-deployer-git --save</code></li>
+</ol>
+<blockquote>
+<p>参考: <a href="https://hans2936.github.io/2018/06/06/HexoLog/" target="_blank" rel="noopener">Github Pages(三)：使用Hexo博客生成工具</a>、<a href="https://guides.github.com/features/mastering-markdown/" target="_blank" rel="noopener">Mastering Markdown·Github</a></p>
+</blockquote>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/03/27/译-Green-Chemistry-Principles-And-Practice/" class="archive-article-date">
-  <time datetime="2019-03-27T04:06:33.000Z" itemprop="datePublished">3月 27</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/27/译-Green-Chemistry-Principles-And-Practice/">译-Green-Chemistry-Principles-And-Practice</a>
-    </h1>
-  
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://shiftwatchout.github.io/2019/02/10/Hexxo-World/" data-id="cjy2fdnui0003d0or7u74l38a" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
 
-    </header>
+    </footer>
   </div>
+  
 </article>
-  
-  
-    </div></section>
+
+
   
 
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/">&laquo; 上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
 
 </section>
         
