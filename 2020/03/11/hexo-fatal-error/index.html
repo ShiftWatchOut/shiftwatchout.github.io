@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>hexo fatal error | Watchout的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="在昨天翻译文章时，遇到了一个错误：markdown 文件已经写好，表面上看着也没什么不正常，但是只要执行hexo g命令就会出现下面的错误123456789101112131415161718192021222324FATAL Something&amp;apos;s wrong. Maybe you can find the solution here: http://hexo.io/docs/trou">
+<meta name="keywords" content="Hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo fatal error">
+<meta property="og:url" content="https://shiftwatchout.github.io/2020/03/11/hexo-fatal-error/index.html">
+<meta property="og:site_name" content="Watchout的博客">
+<meta property="og:description" content="在昨天翻译文章时，遇到了一个错误：markdown 文件已经写好，表面上看着也没什么不正常，但是只要执行hexo g命令就会出现下面的错误123456789101112131415161718192021222324FATAL Something&amp;apos;s wrong. Maybe you can find the solution here: http://hexo.io/docs/trou">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-03-11T02:56:44.381Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hexo fatal error">
+<meta name="twitter:description" content="在昨天翻译文章时，遇到了一个错误：markdown 文件已经写好，表面上看着也没什么不正常，但是只要执行hexo g命令就会出现下面的错误123456789101112131415161718192021222324FATAL Something&amp;apos;s wrong. Maybe you can find the solution here: http://hexo.io/docs/trou">
+  
+    <link rel="alternate" href="/atom.xml" title="Watchout的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Watchout的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://shiftwatchout.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-hexo-fatal-error" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/11/hexo-fatal-error/" class="article-date">
+  <time datetime="2020-03-11T02:35:57.000Z" itemprop="datePublished">2020-03-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      hexo fatal error
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在昨天翻译文章时，遇到了一个错误：markdown 文件已经写好，表面上看着也没什么不正常，但是只要执行<code>hexo g</code>命令就会出现下面的错误<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">FATAL Something&apos;s wrong. Maybe you can find the solution here: http://hexo.io/docs/troubleshooting.html</span><br><span class="line">Template render error: (unknown path) [Line 19, Column 64]</span><br><span class="line">  expected variable end</span><br><span class="line">    at Object._prettifyError (C:\Users\Personal\Desktop\blogs\node_modules\nunjucks\src\lib.js:36:11)</span><br><span class="line">    at Template.render (C:\Users\Personal\Desktop\blogs\node_modules\nunjucks\src\environment.js:542:21)</span><br><span class="line">    at Environment.renderString (C:\Users\Personal\Desktop\blogs\node_modules\nunjucks\src\environment.js:380:17)</span><br><span class="line">    at Promise.fromCallback.cb (C:\Users\Personal\Desktop\blogs\node_modules\hexo\lib\extend\tag.js:62:48)</span><br><span class="line">    at tryCatcher (C:\Users\Personal\Desktop\blogs\node_modules\bluebird\js\release\util.js:16:23)</span><br><span class="line">    at Function.Promise.fromNode.Promise.fromCallback (C:\Users\Personal\Desktop\blogs\node_modules\bluebird\js\release\promise.js:180:30)</span><br><span class="line">    at Tag.render (C:\Users\Personal\Desktop\blogs\node_modules\hexo\lib\extend\tag.js:62:18)</span><br><span class="line">    at Object.onRenderEnd (C:\Users\Personal\Desktop\blogs\node_modules\hexo\lib\hexo\post.js:282:20)</span><br><span class="line">    at Promise.then.then.result (C:\Users\Personal\Desktop\blogs\node_modules\hexo\lib\hexo\render.js:65:19)</span><br><span class="line">    at tryCatcher (C:\Users\Personal\Desktop\blogs\node_modules\bluebird\js\release\util.js:16:23)</span><br><span class="line">    at Promise._settlePromiseFromHandler (C:\Users\Personal\Desktop\blogs\node_modules\bluebird\js\release\promise.js:512:31)</span><br><span class="line">    at Promise._settlePromise (C:\Users\Personal\Desktop\blogs\node_modules\bluebird\js\release\promise.js:569:18)</span><br><span class="line">    at Promise._settlePromise0 (C:\Users\Personal\Desktop\blogs\node_modules\bluebird\js\release\promise.js:614:10)</span><br><span class="line">    at Promise._settlePromises (C:\Users\Personal\Desktop\blogs\node_modules\bluebird\js\release\promise.js:694:18)</span><br><span class="line">    at _drainQueueStep (C:\Users\Personal\Desktop\blogs\node_modules\bluebird\js\release\async.js:138:12)</span><br><span class="line">    at _drainQueue (C:\Users\Personal\Desktop\blogs\node_modules\bluebird\js\release\async.js:131:9)</span><br><span class="line">    at Async._drainQueues (C:\Users\Personal\Desktop\blogs\node_modules\bluebird\js\release\async.js:147:5)</span><br><span class="line">    at Immediate.Async.drainQueues (C:\Users\Personal\Desktop\blogs\node_modules\bluebird\js\release\async.js:17:14)</span><br><span class="line">    at runCallback (timers.js:705:18)</span><br><span class="line">    at tryOnImmediate (timers.js:676:5)</span><br><span class="line">    at processImmediate (timers.js:658:5)</span><br></pre></td></tr></table></figure></p>
+<p>那么根据<a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">官网</a>上对出现<code>Template render error</code>的解释是零宽字符的存在或者是 yaml 文件格式不对，查看相关文件，yaml 并无异常，而且将新写的文章删去后可以正常执行<code>hexo g</code>，就从文章内有零宽字符着手。</p>
+<blockquote>
+<p> 零宽度字符就是一些不可见的，不可打印的字符。它们存在于页面中主要用于调整字符的显示格式，下面就是一些常见的零宽度字符及它们的 unicode 码和原本用途：</p>
+<ol>
+<li>零宽度空格符 (zero-width space) <code>U+200B</code> : 用于较长单词的换行分隔</li>
+<li>零宽度断字符 (zero-width non-joiner) <code>U+200C</code> : 用于阿拉伯文，德文，印度语系等文字中，阻止会发生连字的字符间的连字效果</li>
+<li>零宽度连字符 (zero-width joiner) <code>U+200D</code> : 用于阿拉伯文与印度语系等文字中，使不会发生连字的字符间产生连字效果</li>
+<li>左至右符 (left-to-right mark) <code>U+200E</code> : 用于在混合文字方向的多种语言文本中（例：混合左至右书写的英语与右至左书写的希伯来语），规定排版文字书写方向为左至右</li>
+<li>右至左符 (right-to-left mark) <code>U+200F</code> : 用于在混合文字方向的多种语言文本中，规定排版文字书写方向为右至左</li>
+<li>零宽度非断空格符 (zero width no-break space) <code>U+FEFF</code> : 用于阻止特定位置的换行分隔</li>
+</ol>
+</blockquote>
+<p>通过在 VS code 中使用正则匹配，成功地找到了两个零宽字符，但删除之后，却仍然会出现上面的错误。便去寻找其他的可能问题来源和解决方法。</p>
+<p>最后找到的造成问题的原因是我前一篇文章里在写内联 CSS 时，两个连续的<code>}</code>与 hexo 用到的某个东西语法冲突，需打上空格后才可正常解析。</p>
+<p>参考链接：<a href="https://juejin.im/post/5b87a6e26fb9a019b953ee8b" target="_blank" rel="noopener">零宽字符概念</a>，<a href="https://www.jianshu.com/p/738ebe02029b" target="_blank" rel="noopener">两个紧挨着的大括号造成语法冲突</a>，<a href="https://www.c-sharpcorner.com/article/remove-u200b-zero-width-space-in-richtexthtml-field-sharepoint/" target="_blank" rel="noopener">去除零宽的正则</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://shiftwatchout.github.io/2020/03/11/hexo-fatal-error/" data-id="ck7mqflwb0004osorcnd9jl1v" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/03/10/译-Styling-React-Native-Apps/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">译-Styling React Native Apps</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/">C/C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chemistry/">Chemistry</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ECMAscript/">ECMAscript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C-C/" style="font-size: 10px;">C/C++</a> <a href="/tags/Chemistry/" style="font-size: 16.67px;">Chemistry</a> <a href="/tags/ECMAscript/" style="font-size: 20px;">ECMAscript</a> <a href="/tags/Hexo/" style="font-size: 13.33px;">Hexo</a> <a href="/tags/React/" style="font-size: 13.33px;">React</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/03/11/hexo-fatal-error/">hexo fatal error</a>
+          </li>
+        
+          <li>
+            <a href="/2020/03/10/译-Styling-React-Native-Apps/">译-Styling React Native Apps</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/14/用VS-Codeb运行其中写好的C-文件/">用VS Codeb运行其中写好的C++文件</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/08/Ubuntu-using/">Ubuntu using</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/08/译-Cargo-Sorting-DNA-Robot/">译-Cargo Sorting DNA Robot</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

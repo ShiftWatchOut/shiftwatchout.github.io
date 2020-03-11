@@ -62,6 +62,60 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-hexo-fatal-error" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/11/hexo-fatal-error/" class="article-date">
+  <time datetime="2020-03-11T02:35:57.000Z" itemprop="datePublished">2020-03-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/11/hexo-fatal-error/">hexo fatal error</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在昨天翻译文章时，遇到了一个错误：markdown 文件已经写好，表面上看着也没什么不正常，但是只要执行<code>hexo g</code>命令就会出现下面的错误<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">FATAL Something&apos;s wrong. Maybe you can find the solution here: http://hexo.io/docs/troubleshooting.html</span><br><span class="line">Template render error: (unknown path) [Line 19, Column 64]</span><br><span class="line">  expected variable end</span><br><span class="line">    at Object._prettifyError (C:\Users\Personal\Desktop\blogs\node_modules\nunjucks\src\lib.js:36:11)</span><br><span class="line">    at Template.render (C:\Users\Personal\Desktop\blogs\node_modules\nunjucks\src\environment.js:542:21)</span><br><span class="line">    at Environment.renderString (C:\Users\Personal\Desktop\blogs\node_modules\nunjucks\src\environment.js:380:17)</span><br><span class="line">    at Promise.fromCallback.cb (C:\Users\Personal\Desktop\blogs\node_modules\hexo\lib\extend\tag.js:62:48)</span><br><span class="line">    at tryCatcher (C:\Users\Personal\Desktop\blogs\node_modules\bluebird\js\release\util.js:16:23)</span><br><span class="line">    at Function.Promise.fromNode.Promise.fromCallback (C:\Users\Personal\Desktop\blogs\node_modules\bluebird\js\release\promise.js:180:30)</span><br><span class="line">    at Tag.render (C:\Users\Personal\Desktop\blogs\node_modules\hexo\lib\extend\tag.js:62:18)</span><br><span class="line">    at Object.onRenderEnd (C:\Users\Personal\Desktop\blogs\node_modules\hexo\lib\hexo\post.js:282:20)</span><br><span class="line">    at Promise.then.then.result (C:\Users\Personal\Desktop\blogs\node_modules\hexo\lib\hexo\render.js:65:19)</span><br><span class="line">    at tryCatcher (C:\Users\Personal\Desktop\blogs\node_modules\bluebird\js\release\util.js:16:23)</span><br><span class="line">    at Promise._settlePromiseFromHandler (C:\Users\Personal\Desktop\blogs\node_modules\bluebird\js\release\promise.js:512:31)</span><br><span class="line">    at Promise._settlePromise (C:\Users\Personal\Desktop\blogs\node_modules\bluebird\js\release\promise.js:569:18)</span><br><span class="line">    at Promise._settlePromise0 (C:\Users\Personal\Desktop\blogs\node_modules\bluebird\js\release\promise.js:614:10)</span><br><span class="line">    at Promise._settlePromises (C:\Users\Personal\Desktop\blogs\node_modules\bluebird\js\release\promise.js:694:18)</span><br><span class="line">    at _drainQueueStep (C:\Users\Personal\Desktop\blogs\node_modules\bluebird\js\release\async.js:138:12)</span><br><span class="line">    at _drainQueue (C:\Users\Personal\Desktop\blogs\node_modules\bluebird\js\release\async.js:131:9)</span><br><span class="line">    at Async._drainQueues (C:\Users\Personal\Desktop\blogs\node_modules\bluebird\js\release\async.js:147:5)</span><br><span class="line">    at Immediate.Async.drainQueues (C:\Users\Personal\Desktop\blogs\node_modules\bluebird\js\release\async.js:17:14)</span><br><span class="line">    at runCallback (timers.js:705:18)</span><br><span class="line">    at tryOnImmediate (timers.js:676:5)</span><br><span class="line">    at processImmediate (timers.js:658:5)</span><br></pre></td></tr></table></figure></p>
+<p>那么根据<a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">官网</a>上对出现<code>Template render error</code>的解释是零宽字符的存在或者是 yaml 文件格式不对，查看相关文件，yaml 并无异常，而且将新写的文章删去后可以正常执行<code>hexo g</code>，就从文章内有零宽字符着手。</p>
+<blockquote>
+<p> 零宽度字符就是一些不可见的，不可打印的字符。它们存在于页面中主要用于调整字符的显示格式，下面就是一些常见的零宽度字符及它们的 unicode 码和原本用途：</p>
+<ol>
+<li>零宽度空格符 (zero-width space) <code>U+200B</code> : 用于较长单词的换行分隔</li>
+<li>零宽度断字符 (zero-width non-joiner) <code>U+200C</code> : 用于阿拉伯文，德文，印度语系等文字中，阻止会发生连字的字符间的连字效果</li>
+<li>零宽度连字符 (zero-width joiner) <code>U+200D</code> : 用于阿拉伯文与印度语系等文字中，使不会发生连字的字符间产生连字效果</li>
+<li>左至右符 (left-to-right mark) <code>U+200E</code> : 用于在混合文字方向的多种语言文本中（例：混合左至右书写的英语与右至左书写的希伯来语），规定排版文字书写方向为左至右</li>
+<li>右至左符 (right-to-left mark) <code>U+200F</code> : 用于在混合文字方向的多种语言文本中，规定排版文字书写方向为右至左</li>
+<li>零宽度非断空格符 (zero width no-break space) <code>U+FEFF</code> : 用于阻止特定位置的换行分隔</li>
+</ol>
+</blockquote>
+<p>通过在 VS code 中使用正则匹配，成功地找到了两个零宽字符，但删除之后，却仍然会出现上面的错误。便去寻找其他的可能问题来源和解决方法。</p>
+<p>最后找到的造成问题的原因是我前一篇文章里在写内联 CSS 时，两个连续的<code>}</code>与 hexo 用到的某个东西语法冲突，需打上空格后才可正常解析。</p>
+<p>参考链接：<a href="https://juejin.im/post/5b87a6e26fb9a019b953ee8b" target="_blank" rel="noopener">零宽字符概念</a>，<a href="https://www.jianshu.com/p/738ebe02029b" target="_blank" rel="noopener">两个紧挨着的大括号造成语法冲突</a>，<a href="https://www.c-sharpcorner.com/article/remove-u200b-zero-width-space-in-richtexthtml-field-sharepoint/" target="_blank" rel="noopener">去除零宽的正则</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://shiftwatchout.github.io/2020/03/11/hexo-fatal-error/" data-id="ck7mqflwb0004osorcnd9jl1v" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-译-Styling-React-Native-Apps" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/03/10/译-Styling-React-Native-Apps/" class="article-date">
@@ -120,7 +174,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://shiftwatchout.github.io/2020/03/10/译-Styling-React-Native-Apps/" data-id="ck7m4gcr20005g0orcpad8nn0" class="article-share-link">Share</a>
+      <a data-url="https://shiftwatchout.github.io/2020/03/10/译-Styling-React-Native-Apps/" data-id="ck7mqflwf0008osorxmlx5dop" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
@@ -173,7 +227,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://shiftwatchout.github.io/2019/07/14/用VS-Codeb运行其中写好的C-文件/" data-id="ck7m4gcr00004g0or8j5hf9kp" class="article-share-link">Share</a>
+      <a data-url="https://shiftwatchout.github.io/2019/07/14/用VS-Codeb运行其中写好的C-文件/" data-id="ck7mqflwc0005osorajtrypep" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-C/">C/C++</a></li></ul>
@@ -230,7 +284,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://shiftwatchout.github.io/2019/06/08/Ubuntu-using/" data-id="ck7m4gcqx0003g0or4m96eein" class="article-share-link">Share</a>
+      <a data-url="https://shiftwatchout.github.io/2019/06/08/Ubuntu-using/" data-id="ck7mqflw90003osorgi5h8ltu" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
@@ -321,7 +375,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://shiftwatchout.github.io/2019/06/08/译-Cargo-Sorting-DNA-Robot/" data-id="ck7m4gcsm000qg0or7aylm9oj" class="article-share-link">Share</a>
+      <a data-url="https://shiftwatchout.github.io/2019/06/08/译-Cargo-Sorting-DNA-Robot/" data-id="ck7mqflxh000tosorw87tylor" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Chemistry/">Chemistry</a></li></ul>
@@ -490,7 +544,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://shiftwatchout.github.io/2019/05/10/译-eloquent-javascript-Objects/" data-id="ck7m4gcsb000ng0oriaf4spin" class="article-share-link">Share</a>
+      <a data-url="https://shiftwatchout.github.io/2019/05/10/译-eloquent-javascript-Objects/" data-id="ck7mqflxc000qosorsgct21w4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ECMAscript/">ECMAscript</a></li></ul>
@@ -548,7 +602,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://shiftwatchout.github.io/2019/04/14/译-Biomass-Gasification/" data-id="ck7m4gcre000eg0or0l6dmr4r" class="article-share-link">Share</a>
+      <a data-url="https://shiftwatchout.github.io/2019/04/14/译-Biomass-Gasification/" data-id="ck7mqflwn000hosor0vhqfl31" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Chemistry/">Chemistry</a></li></ul>
@@ -675,7 +729,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://shiftwatchout.github.io/2019/03/27/译-Green-Chemistry-Principles-And-Practice/" data-id="ck7m4gcsn000rg0or0adslipg" class="article-share-link">Share</a>
+      <a data-url="https://shiftwatchout.github.io/2019/03/27/译-Green-Chemistry-Principles-And-Practice/" data-id="ck7mqflxh000uosor9wmrjqaw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Chemistry/">Chemistry</a></li></ul>
@@ -804,7 +858,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://shiftwatchout.github.io/2019/03/27/译-eloquent-javascript-Functions/" data-id="ck7m4gcs8000mg0or52brqz9v" class="article-share-link">Share</a>
+      <a data-url="https://shiftwatchout.github.io/2019/03/27/译-eloquent-javascript-Functions/" data-id="ck7mqflx9000posor592srlnk" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ECMAscript/">ECMAscript</a></li></ul>
@@ -922,91 +976,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://shiftwatchout.github.io/2019/03/27/译-eloquent-javascript-Values-Types-and-Operators/" data-id="ck7m4gcs3000kg0orvmykgqmj" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ECMAscript/">ECMAscript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-译-eloquent-javascript-Introduction" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/03/11/译-eloquent-javascript-Introduction/" class="article-date">
-  <time datetime="2019-03-11T11:13:19.000Z" itemprop="datePublished">2019-03-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/11/译-eloquent-javascript-Introduction/">[译]Eloquent Javascript Introduction</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>我们认为我们创造这个系统是为了我们自己的目的。我们相信我们正在按照自己的想象去做……但是电脑并不像我们。它是我们自身非常微小的一部分的投影:致力于逻辑、秩序、规则和清晰的那部分。—-Ellen Ullman，《Close to the Machine: Technophilia and its Discontents》</p>
-</blockquote>
-<p><img src="https://eloquentjavascript.net/img/chapter_picture_00.jpg" alt="img"></p>
-<p>这是一本关于指挥计算机的书。如今，计算机就像螺丝刀一样常见，但它们要复杂得多，让它们做你想让它们做的事情并不总是那么容易。</p>
-<p>如果你安排给电脑的是一个常见的，很容易理解的任务，比如显示你的电子邮件或发挥一个计算器的作用，你可以打开适当的应用程序开始工作。但对于独特的或开放式的任务，可能没有相应的应用程序。</p>
-<p>这就是编程的用武之地。编程是建立一个程序的行为，建立一组精确的指令告诉计算机要做什么。由于计算机是愚蠢的、迂腐的野兽，编程从根本上来说是乏味和令人沮丧的。</p>
-<p>幸运的是，如果你能克服这一事实，甚至能享受到用愚蠢的机器所能处理的方式进行严谨思考的乐趣，那么编程将是有益的。它可以让你在几秒钟内完成那些人力完成需要花费大量时间的事情。这是一种让你的电脑工具做它以前不能做的事情的方法。它提供了一个绝佳的抽象思维练习。</p>
-<p>大多数程序都是用编程语言完成的。编程语言是一种人工构造的，用于指挥计算机的语言。有趣的是，我们所建立的与电脑沟通的最有效的方式，很大程度上借鉴了人与人之间沟通的方式。像人类语言一样，计算机语言允许单词和短语以新的方式组合在一起，使表达新的概念成为可能。</p>
-<p>基于文字的界面，例如20世纪80年代和90年代的BASIC和DOS提示符，一度是与计算机交互的主要方法。它们在很大程度上已经被视觉界面所取代，视觉界面更容易学习，但提供的自由度更小。计算机语言仍然存在，如果你知道去哪里找的话。JavaScript就是这样一种语言，它内置在每个现代web浏览器中，因此几乎可以在任何设备上使用。</p>
-<p>读完这本书后，你将足够熟悉这种语言，并用它做一些有用的和有趣的事情。</p>
-<h2 id="On-programming"><a href="#On-programming" class="headerlink" title="On programming"></a>On programming</h2><p>除了解释JavaScript，我还将介绍编程的基本原理。事实证明，编程并不容易。基本规则简单明了，但是基于这些规则构建的程序往往会变得十分复杂，恰好展现出其规则性与复杂性。如果你正在建造自己的迷宫，你可能会迷失其中。</p>
-<p>读者在阅读这本书时，有时会感到相当沮丧。如果你是编程新手，将会有很多新内容需要消化。并且之后你可以将这些内容通过额外的知识链接起来。</p>
-<p>你可以做出必要的努力。当你在努力学习这本书的时候，不要对自己的能力妄下结论。你很棒-你只需要坚持下去。休息一下，重新阅读一些材料，确保你已经阅读并理解了示例程序和练习。学习是一项艰苦的工作，但你所学的一切都是你自己的，并且会让你以后的学习变得更容易。</p>
-<blockquote>
-<p>“当行动变得无利可图时，收集信息;当信息变得无利可图时，睡觉。”—-Ursula K. Le Guin, The Left Hand of Darkness</p>
-</blockquote>
-<p>程序是很多东西。它是由程序员输入的一段文本，它是使计算机做它所做的事情的指导力量，它是计算机内存中的数据，而且它还控制在同一内存上执行的操作。我们无法将程序与我们熟悉的对象进行类比。有一种看起来类似的机器，它由许多独立部件组成，为了使整个机器运转起来，我们必须考虑这些部件相互连接的方式，并对整个机器的运转做出贡献。</p>
-<p>计算机是一种物理机器，充当这些非物质机器的主机。计算机本身只能做一些愚蠢而简单的事情。计算机如此有用的原因是它能以惊人的速度做这些事情。而程序可以巧妙地将大量简单的操作结合起来以完成非常复杂的事情。</p>
-<p>程序就像是一座思想的大楼。它建造成本低，重量轻，而且在我们敲代码时很容易层层增高。</p>
-<p>但是如不谨慎对待，程序的大小和复杂性将会失控，甚至会使创建它的人感到困惑。控制程序是编程的主要问题。当程序有用时，它是美丽的。编程的艺术是控制复杂性的技巧。伟大的计划因其复杂性而变得简单。</p>
-<p>一些程序员认为，只有在他们的程序中使用一些易于理解的技巧，才能最好地管理这种复杂性。他们制定了严格的规则(最佳实践)，规定了程序该长成啥样，并留在他们的安全的小区域中。</p>
-<p>这不仅无聊，而且低效。新问题往往需要新的解决方案。编程领域未发展成熟，仍在快速发展，它的多样性足以容纳各种各样的方法。在程序设计中有很多可怕的错误，你应该敢于犯这些错，这样你才能理解它们。一个好的程序该长成啥样的直觉是从实践中发现的，而不是从一堆规则中学到的。</p>
-<h2 id="Why-language-matters"><a href="#Why-language-matters" class="headerlink" title="Why language matters"></a>Why language matters</h2><p>在计算机诞生之初，还没有编程语言。程序是这样的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">00110001 00000000 00000000</span><br><span class="line">00110001 00000001 00000001</span><br><span class="line">00110011 00000001 00000010</span><br><span class="line">01010001 00001011 00000010</span><br><span class="line">00100010 00000010 00001000</span><br><span class="line">01000011 00000001 00000000</span><br><span class="line">01000001 00000001 00000001</span><br><span class="line">00010000 00000010 00000000</span><br><span class="line">01100010 00000000 00000000</span><br></pre></td></tr></table></figure></p>
-<p>这是一个把1到10的数字加在一起并打印出结果的程序:1 + 2 +…+ 10 = 55。它可以在一台简单的假想机器上运行。为了给早期的计算机编程，需要在正确的位置设置大量的开关阵列，或者在卡纸条上打孔，然后把它们输入计算机。你也许可以想象到这个过程是多么乏味和容易出错。即使是编写简单的程序也需要高智商和大量训练。复杂的程序更是几乎是不可想象的。</p>
-<p>当然，手工输入这些神秘的比特语句(1和0组成)确实给了程序员一种成为强大巫师的强烈感觉。这在工作满意度方面还是有价值的。</p>
-<p>前一个程序的每一行都包含一条指令。它可以这样用文字表述：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1. 将数字0存储在内存位置0中。</span><br><span class="line">2. 将数字1存储在内存位置1中。</span><br><span class="line">3. 将内存位置1的值存储在内存位置2中。</span><br><span class="line">4. 从内存位置2的值中减去数字11。</span><br><span class="line">5. 如果内存位置2中的值是0，则从指令9继续执行。</span><br><span class="line">6. 将内存位置1的值加到内存位置0。</span><br><span class="line">7. 内存位置1的值加1。</span><br><span class="line">8. 从指令3继续执行。</span><br><span class="line">9. 输出内存位置0的值。</span><br></pre></td></tr></table></figure></p>
-<p>尽管这已经比一堆比特更容易读懂，但它仍然相当晦涩。对指令和内存位置使用名称而不是数字会有所帮助。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Set “total” to 0.</span><br><span class="line"> Set “count” to 1.</span><br><span class="line">[loop]</span><br><span class="line"> Set “compare” to “count”.</span><br><span class="line"> Subtract 11 from “compare”.</span><br><span class="line"> If “compare” is zero, continue at [end].</span><br><span class="line"> Add “count” to “total”.</span><br><span class="line"> Add 1 to “count”.</span><br><span class="line"> Continue at [loop].</span><br><span class="line">[end]</span><br><span class="line"> Output “total”.</span><br></pre></td></tr></table></figure></p>
-<p>现在能看到程序是如何工作的吗？前两行给出了两个内存位置的初始值:<code>total</code>将用于构建计算结果，<code>count</code>将跟踪我们当前正在查看的数字。使用<code>compare</code>的代码行可能是最奇怪的。程序想要查看<code>count</code>是否等于11，以决定是否可以停止运行。因为我们假想机相当原始，它只能检测一个数字是否为零，然后据此做出决定。因此，它使用标记为<code>compare</code>的内存位置来计算<code>count - 11</code>的值，并根据该值做出决策。接下来的两行将<code>count</code>的值添加到结果中，每当程序确定<code>count</code>还不是11时，就将<code>count</code>增加1。</p>
-<p>下面是用JavaScript编写的相同程序：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let total = 0, count = 1;</span><br><span class="line">while (count &lt;= 10) &#123;</span><br><span class="line">  total += count;</span><br><span class="line">  count += 1;</span><br><span class="line">&#125;</span><br><span class="line">console.log(total);  // → 55</span><br></pre></td></tr></table></figure></p>
-<p>这个版本有了更多的改进。最重要的是，不再需要指定按照我们希望的方式程序来回跳转。<code>while</code>将负责处理这个问题。只要给定的条件依然成立，它就会继续执行它下面的块(大括号括起来的部分)。该条件是<code>count &lt;= 10</code>，这意味着<code>count</code>小于或等于10。我们不再需要创建一个临时值并将其与零进行比较，这只是细枝末节。编程语言的部分能力在于，它们可以为我们处理这些无趣的细节。</p>
-<p>在程序的末尾，<code>while</code>执行完成后，使用<code>console.log</code>操作写出结果。</p>
-<p>最后，如果我们碰巧有方便的操作<code>range</code>和<code>sum</code>可用，程序可能是这样的，它们分别在一个范围内创建一个数字集合并计算一个数字集合的和：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">console.log(sum(range(1, 10)));</span><br><span class="line">// → 55</span><br></pre></td></tr></table></figure></p>
-<p>这个故事的寓意是，同一个程序可以用长和短、不可读和可读的方式表达。该程序的第一个版本非常晦涩难懂，而最后一个版本几乎是英语版本:记录从1到10的数字的总和。（<code>log</code> the <code>sum</code> of the <code>range</code> of numbers from 1 to 10）</p>
-<p>好的编程语言可以通过允许程序员讨论计算机必须在更高的层次上执行的操作来帮助他们。它有助于省略细节，提供方便的积木(如<code>while</code>和<code>console.log</code>)，允许您定义自己的积木(如<code>sum</code>和<code>range</code>)，并使这些块易于组合。</p>
-<h2 id="What-is-JavaScript"><a href="#What-is-JavaScript" class="headerlink" title="What is JavaScript?"></a>What is JavaScript?</h2><p>JavaScript是在1995年发布的，用于向Netscape Navigator浏览器中向web页面添加程序。该语言自那时起已被所有其他主要的图形web浏览器所采用。它使现代web应用程序成为可能，你可以直接与之交互，而不必为每个操作重新加载页面。JavaScript也被用于更传统的网站，以提供各种形式的交互性和智能。</p>
-<p>值得注意的是，JavaScript与名为Java的编程语言几乎没有任何关系。类似的名字是出于营销考虑，而不是良好的判断。当JavaScript被发布时，Java语言正被大力推广，并且越来越受欢迎。有人认为蹭名字是一个好主意，但现在我们被这个名字困住了。</p>
-<p>当JavaScript在Netscape之外的环境被采用之后，一个描述JavaScript的工作方式的标准文档横空出世，以便各种声称支持JavaScript的软件使用的真的是同一种语言。这被称为ECMAScript标准，以执行标准化的Ecma国际组织命名。实际上，ECMAScript和JavaScript可以互换使用，它们是同一种语言的两个名称。</p>
-<p>有些人会说JavaScript的坏话。这些事情很多都是真的。当我第一次被要求用JavaScript写东西时，我很快就开始嫌弃它。它几乎可以接受我输入的任何内容，但解释它的方式与我的本意完全不同。当然，这在很大程度上与我不知道自己在做什么有关，但是这里有一个真正的问题:JavaScript在它所允许的方面是非常自由的。这种设计的本意是使初学者更容易使用JavaScript编程。实际上，它主要使在程序中查找问题变得更加困难，因为系统不会向您指出这些问题。</p>
-<p>不过，这种灵活性也有其优势。它衍生出了许多在更严格的语言中不可能出现的技巧，正如您将看到的(例如在第10章)，它可以用来克服JavaScript的一些缺点。在正确地学习了这门语言并使用它一段时间之后，我已经学会了真正喜欢JavaScript。</p>
-<p>JavaScript有几个版本。ES3在JavaScript逐渐占据主导地位的时期(大约在2000年到2010年之间)得到了广泛支持。在此期间，一个雄心勃勃的版本ES4正在制定，该版本计划对该语言进行一些根本性的改进和扩展。以这样一种激进的方式改变一种被广泛使用的语言，在策略上是行不通的。2008年，ES4的开发工作被放弃，导致第5版的开发远没有那么雄心勃勃，它在2009年只做了一些毫无争议的改进。2015年，ES6发布了，这是一个重大的更新，包括了第4版计划中的一些想法。从那以后，我们每年都可以看到新的小更新。</p>
-<p>语言不断发展的事实意味着浏览器必须不断跟进，如果您使用的是较老的浏览器，它可能不支持现有的所有功能。语言设计者必须非常小心，不做任何可能破坏现有程序的更改，因此新浏览器仍然可以运行旧程序。在这本书中，我使用的是2017年版的JavaScript。</p>
-<p>Web浏览器并不是唯一使用JavaScript的平台。有些数据库，如MongoDB和CouchDB，使用JavaScript作为脚本和查询语言。桌面和服务器编程的几个平台，尤其是Node.js项目(第20章的主题)，为在浏览器之外编写JavaScript提供了一个环境。</p>
-<h2 id="Code-and-what-to-do-with-it"><a href="#Code-and-what-to-do-with-it" class="headerlink" title="Code, and what to do with it"></a>Code, and what to do with it</h2><p>代码是组成程序的文本。这本书的大部分章节都包含了相当多的代码。我认为读代码和写代码是学习编程不可缺少的部分。试着不要只是浏览这些例子，用心阅读并理解它们。这可能在一开始是缓慢和令人困惑的，但我保证你会很快掌握它的窍门。练习也是一样。在你真正写出一个可行的解决方案之前，不要假设你已经理解了它们。</p>
-<p>我建议您在实际的JavaScript解释器中尝试您的练习解决方案。这样，你就会得到关于你所做的是否有效的即时反馈，而且，我希望，你会被诱惑去尝试并超越练习。</p>
-<p>许多示例都是独立的，应该可以在任何JavaScript环境中工作。但是后面章节中的代码通常是针对特定环境(浏览器或Node.js)编写的，并且只能在那里运行。此外，许多章节定义了更大的程序，其中出现的代码片段相互依赖或依赖于外部文件。网站上的<a href="https://eloquentjavascript.net/code/" target="_blank" rel="noopener">沙箱</a>提供指向Zip文件的链接，其中包含运行给定章节代码所需的所有脚本和数据文件。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://shiftwatchout.github.io/2019/03/11/译-eloquent-javascript-Introduction/" data-id="ck7m4gcrf000fg0ordnwojsqe" class="article-share-link">Share</a>
+      <a data-url="https://shiftwatchout.github.io/2019/03/27/译-eloquent-javascript-Values-Types-and-Operators/" data-id="ck7mqflx5000nosor5j1iep08" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ECMAscript/">ECMAscript</a></li></ul>
@@ -1046,7 +1016,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/C-C/" style="font-size: 10px;">C/C++</a> <a href="/tags/Chemistry/" style="font-size: 16.67px;">Chemistry</a> <a href="/tags/ECMAscript/" style="font-size: 20px;">ECMAscript</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/React/" style="font-size: 13.33px;">React</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a>
+      <a href="/tags/C-C/" style="font-size: 10px;">C/C++</a> <a href="/tags/Chemistry/" style="font-size: 16.67px;">Chemistry</a> <a href="/tags/ECMAscript/" style="font-size: 20px;">ECMAscript</a> <a href="/tags/Hexo/" style="font-size: 13.33px;">Hexo</a> <a href="/tags/React/" style="font-size: 13.33px;">React</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a>
     </div>
   </div>
 
@@ -1068,6 +1038,10 @@
       <ul>
         
           <li>
+            <a href="/2020/03/11/hexo-fatal-error/">hexo fatal error</a>
+          </li>
+        
+          <li>
             <a href="/2020/03/10/译-Styling-React-Native-Apps/">译-Styling React Native Apps</a>
           </li>
         
@@ -1081,10 +1055,6 @@
         
           <li>
             <a href="/2019/06/08/译-Cargo-Sorting-DNA-Robot/">译-Cargo Sorting DNA Robot</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/10/译-eloquent-javascript-Objects/">译-eloquent-javascript-Objects</a>
           </li>
         
       </ul>
