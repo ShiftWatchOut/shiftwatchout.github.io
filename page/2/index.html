@@ -62,6 +62,58 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-FCC-Program" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/03/FCC-Program/" class="article-date">
+  <time datetime="2019-03-03T01:11:45.000Z" itemprop="datePublished">2019-03-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/03/FCC-Program/">FCC Program</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="FCC-项目实战-“随机引语生成器”-做后感"><a href="#FCC-项目实战-“随机引语生成器”-做后感" class="headerlink" title="FCC 项目实战 “随机引语生成器” 做后感"></a>FCC 项目实战 “随机引语生成器” 做后感</h2><h3 id="起源"><a href="#起源" class="headerlink" title="起源"></a>起源</h3><p>项目来源是 FCC 上的<a href="https://learn.freecodecamp.one/front-end-libraries/front-end-libraries-projects/build-a-random-quote-machine" title="FreeCodeCamp" target="_blank" rel="noopener">“随机引语生成器”</a>，花了两天时间从 0 到接近完成，完成的项目放在 <a href="https://codepen.io/freecodework/pen/moPPmW?editors=0010" title="Random Quote Machine" target="_blank" rel="noopener">CodePen</a></p>
+<h3 id="意料之外的地方"><a href="#意料之外的地方" class="headerlink" title="意料之外的地方"></a>意料之外的地方</h3><p>其实应该是我目前才疏学浅，只用到 React 的冰山一角吧，有一些地方让我花了较长时间。</p>
+<ol>
+<li><p><code>state</code> 在改变之后，不能在同一个 <code>function</code> 里立马就可以调用到。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class MyComponent extends React.Component &#123;</span><br><span class="line">    constructor(props)&#123;</span><br><span class="line">        super(props)</span><br><span class="line">        this.state = &#123;</span><br><span class="line">            myData: &apos;&apos;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">    doSomething()&#123;</span><br><span class="line">        this.setState(&#123;</span><br><span class="line">            myData: &apos;Strings&apos;</span><br><span class="line">        &#125;)</span><br><span class="line">        //此处myData依然是 &apos;&apos;</span><br><span class="line">        console.log(this.state.myData); </span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>发生上面情况的原因是：想在组件渲染前，<code>fetch</code> 函数获取的数据传给 <code>state</code> ，并且开始渲染第一次加载的引语。把 <code>fetch</code> 函数放在 <code>componentWillMount()</code> 里，然而这个生命周期函数不久后的版本应该就不会再被采用了。之前本想把数据 <code>fetch</code> 到手就立即渲染到 <code>render</code> 函数里的 <code>{this.state.myData}</code> 之类的，但他们都在<code>componentWillMount()</code> 里，后来想到设置子组件的方法，并且先通过条件渲染，确认了想要的 <code>myData</code> 非空值，才开始渲染子组件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; myData &amp;&amp; &lt;Quote/&gt; &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置 <code>&lt;body/&gt;</code> 的样式时用到的 <code>document.getElementsByTagName（）</code> 等类似方法获取到的是类数组对象，可以用数字索引 <code>[0]</code> 获取。</p>
+</li>
+<li><p>另外，在写的过程中发现了一些有点伤心的事情，居然有人在 <a href="https://developer.mozilla.org/zh-CN/" target="_blank" rel="noopener">MDN</a> 里下毒，将中文翻译与英文反着来，真是活久见。 </p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://shiftwatchout.github.io/2019/03/03/FCC-Program/" data-id="ck7m4gcqg0000g0ore2v66s97" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Hexxo-World" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/02/10/Hexxo-World/" class="article-date">
@@ -113,7 +165,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://shiftwatchout.github.io/2019/02/10/Hexxo-World/" data-id="cjy2fdnui0003d0or7u74l38a" class="article-share-link">Share</a>
+      <a data-url="https://shiftwatchout.github.io/2019/02/10/Hexxo-World/" data-id="ck7m4gcqp0001g0orxq15ud1b" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
@@ -153,7 +205,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/C-C/" style="font-size: 10px;">C/C++</a> <a href="/tags/Chemistry/" style="font-size: 15px;">Chemistry</a> <a href="/tags/ECMAscript/" style="font-size: 20px;">ECMAscript</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a>
+      <a href="/tags/C-C/" style="font-size: 10px;">C/C++</a> <a href="/tags/Chemistry/" style="font-size: 16.67px;">Chemistry</a> <a href="/tags/ECMAscript/" style="font-size: 20px;">ECMAscript</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/React/" style="font-size: 13.33px;">React</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a>
     </div>
   </div>
 
@@ -162,7 +214,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li></ul>
     </div>
   </div>
 
@@ -173,6 +225,10 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2020/03/10/译-Styling-React-Native-Apps/">译-Styling React Native Apps</a>
+          </li>
         
           <li>
             <a href="/2019/07/14/用VS-Codeb运行其中写好的C-文件/">用VS Codeb运行其中写好的C++文件</a>
@@ -190,10 +246,6 @@
             <a href="/2019/05/10/译-eloquent-javascript-Objects/">译-eloquent-javascript-Objects</a>
           </li>
         
-          <li>
-            <a href="/2019/04/14/译-Biomass-Gasification/">Biomass Gasification</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -206,7 +258,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2019 John Doe<br>
+      &copy; 2020 John Doe<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
@@ -220,8 +272,6 @@
   
 </nav>
     
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
   <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
