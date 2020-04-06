@@ -8,7 +8,7 @@
   <title>Anaconda+VSCode环境搭建 | Watchout的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="安装 anacondaanaconda 自带了 scikit-learn、numpy、scipy、pandas、jupyter等适用于python机器学习开发环境的模块，一次下载，少量配置，可以说是开封即用，搭配上 VS code 的 Python 拓展，可以有较为愉快的开发体验。 直接从清华镜像网站下载较新版本，安装后 conda 无法被识别为可执行的命令，配置环境变量：  高级系统设置 → 环">
-<meta name="keywords" content="Python">
+<meta name="keywords" content="Python,vscode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Anaconda+VSCode环境搭建">
 <meta property="og:url" content="https://shiftwatchout.github.io/2020/04/05/Anaconda-VSCode环境搭建/index.html">
@@ -16,7 +16,7 @@
 <meta property="og:description" content="安装 anacondaanaconda 自带了 scikit-learn、numpy、scipy、pandas、jupyter等适用于python机器学习开发环境的模块，一次下载，少量配置，可以说是开封即用，搭配上 VS code 的 Python 拓展，可以有较为愉快的开发体验。 直接从清华镜像网站下载较新版本，安装后 conda 无法被识别为可执行的命令，配置环境变量：  高级系统设置 → 环">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://code.visualstudio.com/assets/docs/python/environments/no-interpreter-selected-statusbar.png">
-<meta property="og:updated_time" content="2020-04-05T14:06:24.993Z">
+<meta property="og:updated_time" content="2020-04-06T14:14:15.412Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Anaconda+VSCode环境搭建">
 <meta name="twitter:description" content="安装 anacondaanaconda 自带了 scikit-learn、numpy、scipy、pandas、jupyter等适用于python机器学习开发环境的模块，一次下载，少量配置，可以说是开封即用，搭配上 VS code 的 Python 拓展，可以有较为愉快的开发体验。 直接从清华镜像网站下载较新版本，安装后 conda 无法被识别为可执行的命令，配置环境变量：  高级系统设置 → 环">
@@ -103,22 +103,34 @@
 <h4 id="python-环境选择"><a href="#python-环境选择" class="headerlink" title="python 环境选择"></a>python 环境选择</h4><p>VS code 给予了我们选择 python 运行环境的自由。如果预先安装了其他版本的 python，且前面的环境变量也都设置无误，VS code可以自动为我们找到<code>python.exe</code>。首先要新建一个文件夹，既存项目，又要保存一些编辑器的设置。编辑保存好 python 文件后，使用快捷键<code>Ctrl + Shift + P</code>，输入<code>select interpreter</code>，也可以直接点击左下角 python 版本进行切换。</p>
 <p><img src="https://code.visualstudio.com/assets/docs/python/environments/no-interpreter-selected-statusbar.png" alt="点击选择环境"></p>
 <h4 id="后续遇到的一些问题"><a href="#后续遇到的一些问题" class="headerlink" title="后续遇到的一些问题"></a>后续遇到的一些问题</h4><ol>
-<li>好歹 anaconda 有这么大个体积，这么多依赖安装着，自然它的 Hello World 也不能随随便便<code>print</code>了事。在这个 base 环境下写代码时，想引入<code>numpy</code>还有一些依赖<code>numpy</code>的包如<code>scipy</code>、<code>pandas</code>时，出现了引用错误<code>ImportError</code>，详细信息是： <code>Original error was: DLL load failed: 找不到指定的模块。</code>。解决办法是安装 numpy-base：<code>conda install numpy-base</code>。</li>
+<li><p>好歹 anaconda 有这么大个体积，这么多依赖安装着，自然它的 Hello World 也不能随随便便<code>print</code>了事。在这个 base 环境下写代码时，想引入<code>numpy</code>还有一些依赖<code>numpy</code>的包如<code>scipy</code>、<code>pandas</code>时，出现了引用错误<code>ImportError</code>，详细信息是： <code>Original error was: DLL load failed: 找不到指定的模块。</code>。解决办法是安装 numpy-base：<code>conda install numpy-base</code>。</p>
+</li>
+<li><p>VS code 运行 py 文件时可能会在终端执行两个命令，一个是激活当前环境 base，然后才是正式执行，可以在<code>settings.json</code>里添加/修改<code>python.terminal.activateEnvironment</code>为<code>false</code>，不用每次运行都激活 base。</p>
+</li>
 </ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://shiftwatchout.github.io/2020/04/05/Anaconda-VSCode环境搭建/" data-id="ck8n4bmfv0000rsorv94iplu4" class="article-share-link">Share</a>
+      <a data-url="https://shiftwatchout.github.io/2020/04/05/Anaconda-VSCode环境搭建/" data-id="ck8ojuf320000tgoriihvpoxw" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vscode/">vscode</a></li></ul>
 
     </footer>
   </div>
   
     
 <nav id="article-nav">
+  
+    <a href="/2020/04/06/pandas-读取Excel/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          pandas 处理 Excel
+        
+      </div>
+    </a>
   
   
     <a href="/2020/03/11/hexo-fatal-error/" id="article-nav-older" class="article-nav-link-wrap">
@@ -142,7 +154,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/">C/C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chemistry/">Chemistry</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ECMAscript/">ECMAscript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chemistry/">Chemistry</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ECMAscript/">ECMAscript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/">vscode</a></li></ul>
     </div>
   </div>
 
@@ -152,7 +164,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/C-C/" style="font-size: 10px;">C/C++</a> <a href="/tags/Chemistry/" style="font-size: 16.67px;">Chemistry</a> <a href="/tags/ECMAscript/" style="font-size: 20px;">ECMAscript</a> <a href="/tags/Hexo/" style="font-size: 13.33px;">Hexo</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/React/" style="font-size: 13.33px;">React</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a>
+      <a href="/tags/Chemistry/" style="font-size: 16.67px;">Chemistry</a> <a href="/tags/ECMAscript/" style="font-size: 20px;">ECMAscript</a> <a href="/tags/Hexo/" style="font-size: 13.33px;">Hexo</a> <a href="/tags/Python/" style="font-size: 13.33px;">Python</a> <a href="/tags/React/" style="font-size: 13.33px;">React</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/vscode/" style="font-size: 13.33px;">vscode</a>
     </div>
   </div>
 
@@ -174,6 +186,10 @@
       <ul>
         
           <li>
+            <a href="/2020/04/06/pandas-读取Excel/">pandas 处理 Excel</a>
+          </li>
+        
+          <li>
             <a href="/2020/04/05/Anaconda-VSCode环境搭建/">Anaconda+VSCode环境搭建</a>
           </li>
         
@@ -186,11 +202,7 @@
           </li>
         
           <li>
-            <a href="/2019/07/14/用VS-Codeb运行其中写好的C-文件/">用VS Codeb运行其中写好的C++文件</a>
-          </li>
-        
-          <li>
-            <a href="/2019/06/08/Ubuntu-using/">Ubuntu using</a>
+            <a href="/2019/07/14/用VS-Code运行其中写好的C-文件/">用VS Code运行其中写好的C++文件</a>
           </li>
         
       </ul>
@@ -205,7 +217,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2020 John Doe<br>
+      &copy; 2020 Watch Out<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>

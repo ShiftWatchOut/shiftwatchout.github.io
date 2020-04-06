@@ -5,20 +5,22 @@
   
 
   
-  <title>Hexxo World | Watchout的博客</title>
+  <title>用VS Code运行其中写好的C++文件 | Watchout的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在Github Page上用Hexo搭建博客纪录第一步：本地安装Hexo安装命令：npm install hexo -g 初始化：1234hexo init blogcd blognpm installhexo s 第二步：推送至Github Pages设置根目录_config.yml：  这样是中文，不写是英文language: zh-CN  url: [Your website address">
-<meta name="keywords" content="Hexo">
+  <meta name="description" content="VS Code 具有良好的代码补全、简洁的页面和丰富的插件。作为从前端入坑编程，开始使用 VS Code 的人，目前有了使用 C++ 的需要，想仅使用 VS Code 就满足日常的 C++ 学习需求。 下载编译器VS Code 仅仅是一个文本编辑器，并非一个 IDE，它没有运行 C++ 所必要的编译器，这里我选择 Mingw-w64 作为编译器，前往官网选择所需版本下载。 下载好安装程序后，第二项">
+<meta name="keywords" content="vscode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexxo World">
-<meta property="og:url" content="https://shiftwatchout.github.io/2019/02/10/Hexxo-World/index.html">
+<meta property="og:title" content="用VS Code运行其中写好的C++文件">
+<meta property="og:url" content="https://shiftwatchout.github.io/2019/07/14/用VS-Code运行其中写好的C-文件/index.html">
 <meta property="og:site_name" content="Watchout的博客">
-<meta property="og:description" content="在Github Page上用Hexo搭建博客纪录第一步：本地安装Hexo安装命令：npm install hexo -g 初始化：1234hexo init blogcd blognpm installhexo s 第二步：推送至Github Pages设置根目录_config.yml：  这样是中文，不写是英文language: zh-CN  url: [Your website address">
+<meta property="og:description" content="VS Code 具有良好的代码补全、简洁的页面和丰富的插件。作为从前端入坑编程，开始使用 VS Code 的人，目前有了使用 C++ 的需要，想仅使用 VS Code 就满足日常的 C++ 学习需求。 下载编译器VS Code 仅仅是一个文本编辑器，并非一个 IDE，它没有运行 C++ 所必要的编译器，这里我选择 Mingw-w64 作为编译器，前往官网选择所需版本下载。 下载好安装程序后，第二项">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-04-05T14:02:07.922Z">
+<meta property="og:image" content="https://images2017.cnblogs.com/blog/341522/201801/341522-20180115191945506-2090768460.png">
+<meta property="og:updated_time" content="2020-04-06T14:11:59.386Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexxo World">
-<meta name="twitter:description" content="在Github Page上用Hexo搭建博客纪录第一步：本地安装Hexo安装命令：npm install hexo -g 初始化：1234hexo init blogcd blognpm installhexo s 第二步：推送至Github Pages设置根目录_config.yml：  这样是中文，不写是英文language: zh-CN  url: [Your website address">
+<meta name="twitter:title" content="用VS Code运行其中写好的C++文件">
+<meta name="twitter:description" content="VS Code 具有良好的代码补全、简洁的页面和丰富的插件。作为从前端入坑编程，开始使用 VS Code 的人，目前有了使用 C++ 的需要，想仅使用 VS Code 就满足日常的 C++ 学习需求。 下载编译器VS Code 仅仅是一个文本编辑器，并非一个 IDE，它没有运行 C++ 所必要的编译器，这里我选择 Mingw-w64 作为编译器，前往官网选择所需版本下载。 下载好安装程序后，第二项">
+<meta name="twitter:image" content="https://images2017.cnblogs.com/blog/341522/201801/341522-20180115191945506-2090768460.png">
   
     <link rel="alternate" href="/atom.xml" title="Watchout的博客" type="application/atom+xml">
   
@@ -65,10 +67,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Hexxo-World" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-用VS-Code运行其中写好的C-文件" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/02/10/Hexxo-World/" class="article-date">
-  <time datetime="2019-02-10T15:37:38.000Z" itemprop="datePublished">2019-02-10</time>
+    <a href="/2019/07/14/用VS-Code运行其中写好的C-文件/" class="article-date">
+  <time datetime="2019-07-14T03:07:07.000Z" itemprop="datePublished">2019-07-14</time>
 </a>
     
   </div>
@@ -79,7 +81,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Hexxo World
+      用VS Code运行其中写好的C++文件
     </h1>
   
 
@@ -87,39 +89,29 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="在Github-Page上用Hexo搭建博客纪录"><a href="#在Github-Page上用Hexo搭建博客纪录" class="headerlink" title="在Github Page上用Hexo搭建博客纪录"></a>在Github Page上用Hexo搭建博客纪录</h2><h3 id="第一步：本地安装Hexo"><a href="#第一步：本地安装Hexo" class="headerlink" title="第一步：本地安装Hexo"></a>第一步：本地安装Hexo</h3><p>安装命令：<br><code>npm install hexo -g</code></p>
-<p>初始化：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo init blog</span><br><span class="line">cd blog</span><br><span class="line">npm install</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure></p>
-<h3 id="第二步：推送至Github-Pages"><a href="#第二步：推送至Github-Pages" class="headerlink" title="第二步：推送至Github Pages"></a>第二步：推送至Github Pages</h3><p>设置根目录<code>_config.yml</code>：</p>
+        <p>VS Code 具有良好的代码补全、简洁的页面和丰富的插件。作为从前端入坑编程，开始使用 VS Code 的人，目前有了使用 C++ 的需要，想仅使用 VS Code 就满足日常的 C++ 学习需求。</p>
+<h4 id="下载编译器"><a href="#下载编译器" class="headerlink" title="下载编译器"></a>下载编译器</h4><p>VS Code 仅仅是一个文本编辑器，并非一个 IDE，它没有运行 C++ 所必要的编译器，这里我选择 Mingw-w64 作为编译器，前往<a href="https://mingw-w64.org/doku.php/download" title="官网下载页面" target="_blank" rel="noopener">官网</a>选择所需版本下载。</p>
+<p>下载好安装程序后，第二项选择 <code>x86_64</code>，其它选项可不改动，然后一路 <code>next</code> 下去。</p>
+<p><img src="https://images2017.cnblogs.com/blog/341522/201801/341522-20180115191945506-2090768460.png" alt="POSIX"></p>
+<h4 id="设置环境变量"><a href="#设置环境变量" class="headerlink" title="设置环境变量"></a>设置环境变量</h4><p>如此安装好了之后，并不能直接在任何文件夹下直接编译运行 C++ 程序，还需要设置环境变量。用 <code>gcc -v</code> 或 <code>g++ -v</code> 检验编译器是否在安装文件夹之外可用。假设你的安装文件夹为 E 盘根目录</p>
 <ul>
-<li><p>这样是中文，不写是英文<br><code>language: zh-CN</code></p>
-</li>
-<li><p><code>url: [Your website address](https://shiftwatchout.github.io/)</code></p>
-</li>
-<li><p>根目录在哪里，github就写斜杠，有些服务器会多一层路径<br><code>root: /</code></p>
-</li>
-<li><p>这样可以在 <code>/source</code> 里面放一个 README.md，推送的时候自动传到 Github 上面<br><code>skip_render: README.md</code></p>
-</li>
-<li><p>换主题<br><code>theme: landscape</code></p>
-</li>
-<li><p>推送至Github</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: https://github.com/ShiftWatchOut/shiftwatchout.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-</li>
+<li>在 <code>系统变量</code> 的 <code>Path</code> 变量中添加 <code>E:\mingw64\bin</code> 值，</li>
+<li>在 <code>系统变量</code> 中添加新变量，名为 <code>C_INCLUDE_PATH</code> ，并将值设为 <code>E:\mingw64\include</code>，</li>
+<li>在 <code>系统变量</code> 中添加新变量，名为 <code>CPLUS_INCLUDE_PATH</code> ，并将值设为 <code>E:\mingw64\include</code> 。</li>
 </ul>
-<h3 id="第三步：编辑新文章"><a href="#第三步：编辑新文章" class="headerlink" title="第三步：编辑新文章"></a>第三步：编辑新文章</h3><p>在博客的根目录下才能运行以下命令，创建新article<br><code>hexo new &quot;blog name&quot;</code><br>进入<code>source/_posts</code>文件夹编辑<code>blog-name.MD</code>(空格、加号会变短横)<br>推送代码：<code>hexo g -d</code></p>
-<h3 id="常见错误"><a href="#常见错误" class="headerlink" title="常见错误"></a>常见错误</h3><ol>
-<li><code>ERROR Deployer not found: git</code>，处理方法<code>npm install hexo-deployer-git --save</code></li>
-</ol>
-<blockquote>
-<p>参考: <a href="https://hans2936.github.io/2018/06/06/HexoLog/" target="_blank" rel="noopener">Github Pages(三)：使用Hexo博客生成工具</a>、<a href="https://guides.github.com/features/mastering-markdown/" target="_blank" rel="noopener">Mastering Markdown·Github</a></p>
-</blockquote>
+<p>环境变量设置完成之后，运行 <code>gcc -v</code> 或 <code>g++ -v</code> 命令则会得到一大串关于编译器的版本信息。</p>
+<h4 id="VS-Code-插件"><a href="#VS-Code-插件" class="headerlink" title="VS Code 插件"></a>VS Code 插件</h4><p><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools" target="_blank" rel="noopener">C/C++</a>、<a href="https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner" target="_blank" rel="noopener">Code Runner</a>。</p>
+<p>Code Runner 可以一键运行工作文件夹下的对应 CPP/C 文件，也就是代替人打出冗长的编译运行命令。对于本人的学习需求已经足够了，而且还很方便。</p>
+<p><strong>参考链接：</strong></p>
+<p><a href="https://zhuanlan.zhihu.com/p/54861567" title="[VSCode插件推荐] Code Runner: 代码一键运行，支持超过40种语言" target="_blank" rel="noopener">Code Runner 插件作者知乎文章</a><br><a href="https://www.cnblogs.com/findumars/p/8289454.html" title="在Windows中安装MinGW-w64" target="_blank" rel="noopener">网友的 MinGW-W64 安装图文教程</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://shiftwatchout.github.io/2019/02/10/Hexxo-World/" data-id="ck8ojuf3g0005tgoryhhgnj2x" class="article-share-link">Share</a>
+      <a data-url="https://shiftwatchout.github.io/2019/07/14/用VS-Code运行其中写好的C-文件/" data-id="ck8ojuf3k0009tgork8iltqoe" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vscode/">vscode</a></li></ul>
 
     </footer>
   </div>
@@ -127,15 +119,20 @@
     
 <nav id="article-nav">
   
-    <a href="/2019/03/03/FCC-Program/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/03/10/译-Styling-React-Native-Apps/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          FCC Program
+          译-Styling React Native Apps
         
       </div>
     </a>
   
+  
+    <a href="/2019/06/08/Ubuntu-using/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Ubuntu using</div>
+    </a>
   
 </nav>
 
