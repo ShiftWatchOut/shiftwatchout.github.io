@@ -7,19 +7,19 @@
   
   <title>Anaconda+VSCode环境搭建 | Watchout的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="安装 anacondaanaconda 自带了 scikit-learn、numpy、scipy、pandas、jupyter等适用于python机器学习开发环境的模块，一次下载，少量配置，可以说是开封即用，搭配上 VS code 的 Python 拓展，可以有较为愉快的开发体验。 直接从清华镜像网站下载较新版本，安装后 conda 无法被识别为可执行的命令，配置环境变量：  高级系统设置 → 环">
+  <meta name="description" content="anaconda 自带了 scikit-learn、numpy、scipy、pandas、jupyter等适用于python机器学习开发环境的模块，一次下载，少量配置，可以说是开封即用，搭配上 VS code 的 Python 拓展，可以有较为愉快的开发体验。 Windows 安装 anaconda使用迅雷下载这类支持断点续传(或者是它服务器上保存了相应文件)的下载软件，进入官网下载页面，复制需要">
 <meta name="keywords" content="Python,vscode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Anaconda+VSCode环境搭建">
 <meta property="og:url" content="https://shiftwatchout.github.io/2020/04/05/Anaconda-VSCode环境搭建/index.html">
 <meta property="og:site_name" content="Watchout的博客">
-<meta property="og:description" content="安装 anacondaanaconda 自带了 scikit-learn、numpy、scipy、pandas、jupyter等适用于python机器学习开发环境的模块，一次下载，少量配置，可以说是开封即用，搭配上 VS code 的 Python 拓展，可以有较为愉快的开发体验。 直接从清华镜像网站下载较新版本，安装后 conda 无法被识别为可执行的命令，配置环境变量：  高级系统设置 → 环">
+<meta property="og:description" content="anaconda 自带了 scikit-learn、numpy、scipy、pandas、jupyter等适用于python机器学习开发环境的模块，一次下载，少量配置，可以说是开封即用，搭配上 VS code 的 Python 拓展，可以有较为愉快的开发体验。 Windows 安装 anaconda使用迅雷下载这类支持断点续传(或者是它服务器上保存了相应文件)的下载软件，进入官网下载页面，复制需要">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://code.visualstudio.com/assets/docs/python/environments/no-interpreter-selected-statusbar.png">
-<meta property="og:updated_time" content="2020-04-06T14:14:15.412Z">
+<meta property="og:updated_time" content="2020-04-11T05:30:34.392Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Anaconda+VSCode环境搭建">
-<meta name="twitter:description" content="安装 anacondaanaconda 自带了 scikit-learn、numpy、scipy、pandas、jupyter等适用于python机器学习开发环境的模块，一次下载，少量配置，可以说是开封即用，搭配上 VS code 的 Python 拓展，可以有较为愉快的开发体验。 直接从清华镜像网站下载较新版本，安装后 conda 无法被识别为可执行的命令，配置环境变量：  高级系统设置 → 环">
+<meta name="twitter:description" content="anaconda 自带了 scikit-learn、numpy、scipy、pandas、jupyter等适用于python机器学习开发环境的模块，一次下载，少量配置，可以说是开封即用，搭配上 VS code 的 Python 拓展，可以有较为愉快的开发体验。 Windows 安装 anaconda使用迅雷下载这类支持断点续传(或者是它服务器上保存了相应文件)的下载软件，进入官网下载页面，复制需要">
 <meta name="twitter:image" content="https://code.visualstudio.com/assets/docs/python/environments/no-interpreter-selected-statusbar.png">
   
     <link rel="alternate" href="/atom.xml" title="Watchout的博客" type="application/atom+xml">
@@ -89,12 +89,24 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="安装-anaconda"><a href="#安装-anaconda" class="headerlink" title="安装 anaconda"></a>安装 anaconda</h4><p>anaconda 自带了 <code>scikit-learn</code>、<code>numpy</code>、<code>scipy</code>、<code>pandas</code>、<code>jupyter</code>等适用于python机器学习开发环境的模块，一次下载，少量配置，可以说是开封即用，搭配上 VS code 的 <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python" target="_blank" rel="noopener">Python</a> 拓展，可以有较为愉快的开发体验。</p>
-<p>直接从<a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/" target="_blank" rel="noopener">清华镜像网站</a>下载较新版本，安装后 conda 无法被识别为可执行的命令，配置环境变量：</p>
-<blockquote>
-<p>高级系统设置 → 环境变量 → 系统变量 → 在”<code>Path</code>“中添加 anaconda 的 <code>python.exe</code> 所在文件夹和 <code>/Script</code> 文件夹的绝对路径</p>
-</blockquote>
+        <p>anaconda 自带了 <code>scikit-learn</code>、<code>numpy</code>、<code>scipy</code>、<code>pandas</code>、<code>jupyter</code>等适用于python机器学习开发环境的模块，一次下载，少量配置，可以说是开封即用，搭配上 VS code 的 <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python" target="_blank" rel="noopener">Python</a> 拓展，可以有较为愉快的开发体验。</p>
+<h4 id="Windows-安装-anaconda"><a href="#Windows-安装-anaconda" class="headerlink" title="Windows 安装 anaconda"></a>Windows 安装 anaconda</h4><p>使用迅雷下载这类支持断点续传(或者是它服务器上保存了相应文件)的下载软件，进入<a href="https://www.anaconda.com/distribution/" target="_blank" rel="noopener">官网下载页面</a>，复制需要的版本链接下载链接</p>
+<p>不愿意安装其他软件下载的话，可以直接从<a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/" target="_blank" rel="noopener">清华镜像网站</a>下载较新版本，不过说新也不新，但是后面可以升级到最新版本就是了，需要花费额外的升级时间。</p>
+<p>如果安装后 conda 无法被识别为可执行的命令，配置环境变量：</p>
+<ul>
+<li>高级系统设置 → 环境变量 → 系统变量 → 在”<code>Path</code>“中添加 anaconda 的 <code>python.exe</code> 所在文件夹和 <code>/Script</code> 文件夹的绝对路径</li>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$&#123;安装文件夹&#125;                   #根目录</span><br><span class="line">$&#123;安装文件夹&#125;\Scripts           </span><br><span class="line">$&#123;安装文件夹&#125;\Library\bin       #非必须，当出现`ImportError`时可能需要添上这个来解决问题</span><br></pre></td></tr></table></figure>
+<h4 id="Ubuntu-安装-anaconda"><a href="#Ubuntu-安装-anaconda" class="headerlink" title="Ubuntu 安装 anaconda"></a>Ubuntu 安装 anaconda</h4><p>Ubuntu 环境可以选择在硬盘上安装的 Ubuntu 桌面环境，也可以在 win10 下使用 wsl ，搭配上 VS code 的<a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl" target="_blank" rel="noopener">Remote - WSL</a>插件使用，果然印证了那句“ Windows 是最好的 Linux 发行版”。</p>
+<p>下载镜像站中对应 Linux 版本，在下载文件夹下打开终端，执行以下命令<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash &#123;对应shell文件名&#125;.sh</span><br></pre></td></tr></table></figure></p>
+<p>一路 Enter/yes ，当然 IDE 可以自行选择，清华镜像站上下载的旧版本会提醒是否联网下载 VS code ，后来的新版本成了 Anaconda and JetBrains are working together，或许 PyCharm 目前才是 较好的 anaconda 环境吧。</p>
+<p><em>注意：</em></p>
+<ul>
+<li>VS code 链接 wsl 之后，调试用的插件还需为 wsl 安装一次</li>
+<li>wsl 没有GUI，使用 matplotlib 时应该保存图片在当前文件夹下，然后就可以用 VS code 查看结果了<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="comment"># plt.show()  已经无效</span></span><br><span class="line">plt.savefig(<span class="string">'matplotlib.png'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>找到 anaconda 安装目录，使用<code>sudo rm -rf anaconda3</code>删除。</p>
 <h4 id="conda-换清华源"><a href="#conda-换清华源" class="headerlink" title="conda 换清华源"></a>conda 换清华源</h4><p>为了加快使用 conda 安装模块时的下载速度，配置为清华大学镜像源。在Windows环境下，先使用<code>conda config --set show_channel_urls yes</code>，生成<code>.condarc</code>文件，然后直接粘贴入以下内容即可：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">channels:</span><br><span class="line">  - defaults</span><br><span class="line">show_channel_urls: true</span><br><span class="line">channel_alias: https://mirrors.tuna.tsinghua.edu.cn/anaconda</span><br><span class="line">default_channels:</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/pro</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2</span><br><span class="line">custom_channels:</span><br><span class="line">  conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br><span class="line">  msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br><span class="line">  bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br><span class="line">  menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br><span class="line">  pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br><span class="line">  simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br></pre></td></tr></table></figure>
 <p>运行<code>conda clean -i</code>清除索引缓存，保证用的是镜像站提供的索引。</p>
@@ -107,12 +119,16 @@
 </li>
 <li><p>VS code 运行 py 文件时可能会在终端执行两个命令，一个是激活当前环境 base，然后才是正式执行，可以在<code>settings.json</code>里添加/修改<code>python.terminal.activateEnvironment</code>为<code>false</code>，不用每次运行都激活 base。</p>
 </li>
+<li><p>意想不到的是，就连引入 sklearn 包也会出问题，网上提供了一种解决方法，然鹅终究还是担心又会因为 Windows 环境出现其他<code>DLL Failed</code>问题，于是切换到 Ubuntu 下。</p>
+</li>
+<li><p>在 Linux 下只遇到了升级时文件夹读写权限的问题，在终端执行<code>sudo chown -R usrname:usrname /home/usrname/miniconda3</code>，chown 的目标是 anaconda 的安装文件夹，之后就可以正常升级，完全不会遇到上面的包引入时的问题。</p>
+</li>
 </ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://shiftwatchout.github.io/2020/04/05/Anaconda-VSCode环境搭建/" data-id="ck8okojvg0000esorr026f32m" class="article-share-link">Share</a>
+      <a data-url="https://shiftwatchout.github.io/2020/04/05/Anaconda-VSCode环境搭建/" data-id="ck8x5rj4x0000gsorhi34zvg6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vscode/">vscode</a></li></ul>
@@ -154,7 +170,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chemistry/">Chemistry</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ECMAscript/">ECMAscript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/">vscode</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chemistry/">Chemistry</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ECMAscript/">ECMAscript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/translation/">translation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/">vscode</a></li></ul>
     </div>
   </div>
 
@@ -164,7 +180,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Chemistry/" style="font-size: 16.67px;">Chemistry</a> <a href="/tags/ECMAscript/" style="font-size: 20px;">ECMAscript</a> <a href="/tags/Hexo/" style="font-size: 13.33px;">Hexo</a> <a href="/tags/Python/" style="font-size: 13.33px;">Python</a> <a href="/tags/React/" style="font-size: 13.33px;">React</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/vscode/" style="font-size: 13.33px;">vscode</a>
+      <a href="/tags/Chemistry/" style="font-size: 15px;">Chemistry</a> <a href="/tags/ECMAscript/" style="font-size: 17.5px;">ECMAscript</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/Python/" style="font-size: 12.5px;">Python</a> <a href="/tags/React/" style="font-size: 12.5px;">React</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/translation/" style="font-size: 20px;">translation</a> <a href="/tags/vscode/" style="font-size: 12.5px;">vscode</a>
     </div>
   </div>
 
@@ -186,6 +202,10 @@
       <ul>
         
           <li>
+            <a href="/2020/04/12/Git-学习/">Git 学习</a>
+          </li>
+        
+          <li>
             <a href="/2020/04/06/pandas-读取Excel/">pandas 处理 Excel</a>
           </li>
         
@@ -199,10 +219,6 @@
         
           <li>
             <a href="/2020/03/10/译-Styling-React-Native-Apps/">译-Styling React Native Apps</a>
-          </li>
-        
-          <li>
-            <a href="/2019/07/14/用VS-Code运行其中写好的C-文件/">用VS Code运行其中写好的C++文件</a>
           </li>
         
       </ul>

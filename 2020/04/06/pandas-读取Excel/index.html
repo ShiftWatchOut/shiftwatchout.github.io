@@ -16,7 +16,7 @@
 <meta property="og:description" content="pandas 是一个数据结构和数据分析工具。 pandas 数据类型   名称 描述     Series 带标签的一维同构数组   DataFrame 带标签的，大小可变的，二维异构表格    读取 Excel 文件123import pandas as pddf = pd.read_excel(filelName, sheet_name=sheetName)df.keys()">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yanxuan.nosdn.127.net/5c98e8b2a33cf79319e42f835c42be32.png">
-<meta property="og:updated_time" content="2020-04-06T14:11:24.858Z">
+<meta property="og:updated_time" content="2020-04-08T01:55:53.024Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="pandas 处理 Excel">
 <meta name="twitter:description" content="pandas 是一个数据结构和数据分析工具。 pandas 数据类型   名称 描述     Series 带标签的一维同构数组   DataFrame 带标签的，大小可变的，二维异构表格    读取 Excel 文件123import pandas as pddf = pd.read_excel(filelName, sheet_name=sheetName)df.keys()">
@@ -120,11 +120,11 @@
 <li>skiprows：array\&lt;int>，从头开始要跳过的行数，接受的是数组，会直接把数组内的行都忽略掉。</li>
 <li>skipfooter：int，看似与上面的对应，但接受参数类型却不同，处理方式也不一样，这个参数会使函数忽略从末行开始到倒数第 int 行的数据。</li>
 </ol>
-<h4 id="pandas-常用查询方法"><a href="#pandas-常用查询方法" class="headerlink" title="pandas 常用查询方法"></a>pandas 常用查询方法</h4><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">df.describe()       <span class="comment">#简要总结数据</span></span><br><span class="line">df.T                <span class="comment">#数据帧转置</span></span><br><span class="line">df.copy()           <span class="comment">#复制一份数据，而不是使用 = 给予另一个变量引用，这样两份数据就互不干扰</span></span><br><span class="line">df.index            <span class="comment">#数据帧行号</span></span><br><span class="line">df.columns          <span class="comment">#数据帧的列名的列表</span></span><br><span class="line">df.loc[int]         <span class="comment">#接受单个整数，返回第 int 行的一个 Series</span></span><br><span class="line">df.loc[<span class="number">1</span>:<span class="number">4</span>]         <span class="comment">#还可以接受切片或数组，返回相应的几个列</span></span><br><span class="line">df.loc[int, col]    <span class="comment">#行号和列名可以定位一个 cell</span></span><br><span class="line">df.at[int, col]     <span class="comment">#同上</span></span><br><span class="line">df.loc[int].at[col] <span class="comment">#甚至还可以这样</span></span><br></pre></td></tr></table></figure>
+<h4 id="pandas-常用方法（DataFrame）"><a href="#pandas-常用方法（DataFrame）" class="headerlink" title="pandas 常用方法（DataFrame）"></a>pandas 常用方法（DataFrame）</h4><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">df.describe()             <span class="comment">#简要总结数据</span></span><br><span class="line">df.head(int)              <span class="comment">#前 int 行数据帧</span></span><br><span class="line">df.tail(int)              <span class="comment">#后 int 行数据帧</span></span><br><span class="line">df.T                      <span class="comment">#数据帧转置</span></span><br><span class="line">df.copy()                 <span class="comment">#复制一份数据，而不是使用 = 给予另一个变量引用，这样两份数据就互不干扰</span></span><br><span class="line">df.index                  <span class="comment">#数据帧行号</span></span><br><span class="line">df.columns                <span class="comment">#数据帧的列名的列表</span></span><br><span class="line">df.loc[int]               <span class="comment">#接受单个整数，返回第 int 行的一个 Series</span></span><br><span class="line">df.loc[<span class="number">1</span>:<span class="number">4</span>]               <span class="comment">#还可以接受切片或数组，返回相应的几个列</span></span><br><span class="line">df.loc[int, col]          <span class="comment">#行号和列名可以定位一个 cell</span></span><br><span class="line">df.at[int, col]           <span class="comment">#同上</span></span><br><span class="line">df.loc[int].at[col]       <span class="comment">#甚至还可以这样</span></span><br><span class="line">df.dropna()               <span class="comment">#删去含有 NaN 的行</span></span><br><span class="line">df.dropna(how=<span class="string">'all'</span>)      <span class="comment">#删去全是 NaN 的行</span></span><br><span class="line">df.dropna(thresh=i)       <span class="comment">#至少有 i 个 NaN 才删去该行</span></span><br><span class="line">df.fillna(x)              <span class="comment">#用 x 替换 NaN</span></span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://shiftwatchout.github.io/2020/04/06/pandas-读取Excel/" data-id="ck8okojvx0007esormdq93hpd" class="article-share-link">Share</a>
+      <a data-url="https://shiftwatchout.github.io/2020/04/06/pandas-读取Excel/" data-id="ck8x5rjgl001qgsormi6g7aku" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
@@ -134,6 +134,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2020/04/12/Git-学习/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Git 学习
+        
+      </div>
+    </a>
   
   
     <a href="/2020/04/05/Anaconda-VSCode环境搭建/" id="article-nav-older" class="article-nav-link-wrap">
@@ -157,7 +166,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chemistry/">Chemistry</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ECMAscript/">ECMAscript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/">vscode</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chemistry/">Chemistry</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ECMAscript/">ECMAscript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/translation/">translation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/">vscode</a></li></ul>
     </div>
   </div>
 
@@ -167,7 +176,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Chemistry/" style="font-size: 16.67px;">Chemistry</a> <a href="/tags/ECMAscript/" style="font-size: 20px;">ECMAscript</a> <a href="/tags/Hexo/" style="font-size: 13.33px;">Hexo</a> <a href="/tags/Python/" style="font-size: 13.33px;">Python</a> <a href="/tags/React/" style="font-size: 13.33px;">React</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/vscode/" style="font-size: 13.33px;">vscode</a>
+      <a href="/tags/Chemistry/" style="font-size: 15px;">Chemistry</a> <a href="/tags/ECMAscript/" style="font-size: 17.5px;">ECMAscript</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/Python/" style="font-size: 12.5px;">Python</a> <a href="/tags/React/" style="font-size: 12.5px;">React</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/translation/" style="font-size: 20px;">translation</a> <a href="/tags/vscode/" style="font-size: 12.5px;">vscode</a>
     </div>
   </div>
 
@@ -189,6 +198,10 @@
       <ul>
         
           <li>
+            <a href="/2020/04/12/Git-学习/">Git 学习</a>
+          </li>
+        
+          <li>
             <a href="/2020/04/06/pandas-读取Excel/">pandas 处理 Excel</a>
           </li>
         
@@ -202,10 +215,6 @@
         
           <li>
             <a href="/2020/03/10/译-Styling-React-Native-Apps/">译-Styling React Native Apps</a>
-          </li>
-        
-          <li>
-            <a href="/2019/07/14/用VS-Code运行其中写好的C-文件/">用VS Code运行其中写好的C++文件</a>
           </li>
         
       </ul>
